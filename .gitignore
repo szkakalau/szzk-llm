@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Model weights
+models/
+*.pth
+*.bin
+*.safetensors
+*.ckpt
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+
+# Logs
+*.log
+logs/
+
+# Data (keep structure, ignore large files)
+data/**/*.json
+data/**/*.jsonl
+
+# WandB
+wandb/
+
+# Cache
+.cache/
+*.cache
