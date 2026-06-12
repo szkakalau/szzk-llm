@@ -33,6 +33,9 @@ Thumbs.db
 # Environment
 .env
 
+# Local notes (private, not shared)
+NOTES.local.md
+
 # Logs
 *.log
 logs/
