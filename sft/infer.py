@@ -43,15 +43,19 @@ def generate(model, tokenizer, question: str, max_new_tokens: int = 256) -> str:
     )
     inputs = tokenizer(text, return_tensors="pt")
 
+    # <|im_end|> token ID = 151645 (Qwen2.5)
+    IM_END_ID = 151645
+    stop_ids = [tokenizer.eos_token_id, IM_END_ID]
+
     with torch.no_grad():
         outputs = model.generate(
             **inputs,
             max_new_tokens=max_new_tokens,
-            temperature=0.1,        # 低温度 = 更确定性的回答
+            temperature=0.1,
             top_p=0.95,
             do_sample=True,
             pad_token_id=tokenizer.pad_token_id,
-            eos_token_id=tokenizer.eos_token_id,
+            eos_token_id=stop_ids,
         )
 
     # 只取新生成的部分
