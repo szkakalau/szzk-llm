@@ -45,9 +45,10 @@ DEFAULTS = {
 
 
 def format_chat(example: dict) -> dict:
-    """将 QA 对格式化为 ChatML 格式"""
+    """将 QA 对格式化为 ChatML 格式（含 system prompt）"""
     return {
         "messages": [
+            {"role": "system", "content": "你是一个专业的中学学科答疑助手，请用简洁准确的语言回答问题。"},
             {"role": "user", "content": example["question"]},
             {"role": "assistant", "content": example["answer"]},
         ]
@@ -123,18 +124,8 @@ def main():
         **load_kwargs,
     )
 
-    # 配置 chat template（如果模型没有自带）
-    if not hasattr(tokenizer, 'chat_template') or tokenizer.chat_template is None:
-        tokenizer.chat_template = (
-            "{% for message in messages %}"
-            "{% if message['role'] == 'user' %}"
-            "<|im_start|>user\n{{ message['content'] }}<|im_end|>\n"
-            "{% elif message['role'] == 'assistant' %}"
-            "<|im_start|>assistant\n{{ message['content'] }}<|im_end|>\n"
-            "{% endif %}"
-            "{% endfor %}"
-        )
-        print("  已设置默认 chat_template (ChatML 格式)")
+    # Qwen2.5 自带 chat_template，直接使用
+    print(f"  使用模型自带 chat_template: {tokenizer.chat_template[:60]}...")
 
     # 格式化函数：将 messages 转为训练文本
     def formatting_func(example):
