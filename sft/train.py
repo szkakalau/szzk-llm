@@ -199,8 +199,21 @@ def main():
             )
             print("  WandB initialized successfully")
         except Exception as e:
-            print(f"  WandB 初始化失败: {e}")
-            training_args.report_to = ["none"]
+            print(f"  WandB online failed: {e}")
+            print("  Trying offline mode (logs saved locally, sync later with: wandb sync)")
+            try:
+                os.environ["WANDB_MODE"] = "offline"
+                wandb.init(
+                    project=DEFAULTS["wandb_project"],
+                    entity=DEFAULTS["wandb_entity"],
+                    config={"model": args.model},
+                    mode="offline",
+                )
+                print("  WandB offline mode OK")
+            except Exception as e2:
+                print(f"  WandB offline also failed: {e2}")
+                print("  Continuing without WandB logging")
+                training_args.report_to = ["none"]
     else:
         print("\n  [测试模式] 跳过 WandB 初始化")
 
@@ -229,8 +242,7 @@ def main():
         train_dataset=train_data,
         eval_dataset=val_data,
         formatting_func=formatting_func,
-        tokenizer=tokenizer,
-        max_seq_length=args.max_seq_length,
+        processing_class=tokenizer,
         peft_config=peft_config,
     )
 
