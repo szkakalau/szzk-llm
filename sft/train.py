@@ -35,7 +35,7 @@ DEFAULTS = {
     "batch_size": 4,
     "gradient_accumulation": 2,
     "learning_rate": 2e-5,
-    "warmup_ratio": 0.05,
+    "warmup_steps": 50,
     "max_seq_length": 1024,
     "save_steps": 100,
     "logging_steps": 10,
@@ -112,10 +112,10 @@ def main():
     if not torch.cuda.is_available():
         # CPU 模式：减少内存占用
         load_kwargs["device_map"] = "cpu"
-        load_kwargs["torch_dtype"] = torch.float32
+        load_kwargs["dtype"] = torch.float32
         print("  [CPU] GPU not available, using CPU mode (for syntax verification only)")
     else:
-        load_kwargs["torch_dtype"] = torch.bfloat16
+        load_kwargs["dtype"] = torch.bfloat16
 
     model = AutoModelForCausalLM.from_pretrained(
         args.model,
@@ -160,7 +160,7 @@ def main():
         per_device_eval_batch_size=args.batch_size,
         gradient_accumulation_steps=1 if test_mode else args.gradient_accumulation,
         learning_rate=args.learning_rate,
-        warmup_ratio=DEFAULTS["warmup_ratio"],
+        warmup_steps=DEFAULTS["warmup_steps"],
         logging_steps=DEFAULTS["logging_steps"],
         save_steps=DEFAULTS["save_steps"],
         eval_strategy="steps",
