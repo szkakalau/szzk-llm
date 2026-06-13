@@ -40,9 +40,7 @@ NOTES.local.md
 *.log
 logs/
 
-# Data (keep structure, ignore large files)
-data/**/*.json
-data/**/*.jsonl
+# Data - track small JSON files, ignore large ones (>10MB) manually if needed
 
 # WandB
 wandb/
