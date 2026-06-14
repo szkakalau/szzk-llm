@@ -101,7 +101,26 @@ def extract_answer(text: str) -> str | None:
     if len(text_clean) <= 3 and text_clean[0] in 'ABCD':
         return text_clean[0]
 
-    # 7. 最终fallback: 检查是否只有一个A-D字母出现且不连续
+    # 7. 长文本末尾扫描 (CoT输出答案在最后200字符内)
+    if len(text) > 200:
+        tail = text[-200:]
+        # 在末尾找 "选X" "是X" "为X" 等模式
+        tail_patterns = [
+            r'(?:选[择]?|答案是?|为|是)\s*([A-D])\s*(?:[。，、\s]|$)',
+            r'([A-D])\s*(?:选项|正确|为正确答案)',
+            r'(?:^|\s)([A-D])\s*$',  # 行尾独立字母
+        ]
+        for pat in tail_patterns:
+            matches = re.findall(pat, tail)
+            if matches:
+                return matches[-1]  # 最后一个匹配
+        # 末尾100字符中的最后一个独立A-D字母
+        last_tail = tail[-100:]
+        tail_letters = re.findall(r'(?:^|\s)([A-D])(?:\s|[.。,，、．]|$)', last_tail)
+        if tail_letters:
+            return tail_letters[-1]
+
+    # 8. 最终fallback: 检查是否只有一个A-D字母出现且不连续
     found = [c for c in text_clean if c in 'ABCD']
     if len(found) == 1:
         return found[0]
@@ -232,7 +251,7 @@ def evaluate_model(model, tokenizer, device: str, questions: list,
                 "expected": true_letter,
                 "predicted": pred_letter or "?",
                 "error_type": classify_error(pred, true_letter),
-                "raw_output": pred[:200],
+                "raw_output": pred[:800],  # CoT输出可达1000+字符，答案通常在末尾
             })
 
         results["details"].append({
