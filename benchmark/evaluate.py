@@ -23,59 +23,85 @@ BENCHMARK_PATH = "benchmark/test_set_v0.1.json"
 def extract_answer(text: str) -> str | None:
     """从模型输出中提取选项字母 A/B/C/D
 
-    支持格式:
-    - "A" "B" "C" "D" (纯字母)
-    - "A." "A、" "（A）" "(A)"
-    - "选A" "答案：A" "答案为A" "故选A"
-    - "【答案】A"
-    - CoT末尾的答案行
+    策略（按优先级）:
+    1. 显式答案标记 (【答案】/答案为/故选/所以选择)
+    2. 最后一个"选X"类标记
+    3. 行尾独立字母 (CoT格式)
+    4. 括号中的字母
+    5. 短文本fallback
+    排除: "ABCD"连续序列、选项列表(A/B/C/D同时出现)
     """
     if not text:
         return None
     text = text.strip()
 
-    # 1. 先尝试匹配常见的答案标记格式
-    patterns = [
+    # 排除"ABCD"连续序列
+    if re.search(r'[A-D]{4}', text):
+        return None
+
+    # 1. 显式答案标记 (最高优先级)
+    explicit_patterns = [
         r'【答案】\s*([A-D])',
+        r'(?:所以选择|所以选|因此选择|因此选|综上.*?选)\s*([A-D])',
+        r'(?:正确答案是?|正确.*?是?)\s*([A-D])',
+        r'[Tt]he\s+answer\s+is\s+([A-D])',  # 英文格式
         r'答案[：:]\s*([A-D])',
-        r'(?:故选?|应选?|答案为?)\s*([A-D])',
-        r'(?:选项|正确选项)\s*([A-D])',
+        r'答案为?\s*([A-D])',
+        r'(?:故选|应选|正确选项为?|正确选项[：:])\s*([A-D])',
     ]
-    for pat in patterns:
-        m = re.search(pat, text)
+    # 取最后一个匹配（CoT中最终答案在最后）
+    last_match = None
+    for pat in explicit_patterns:
+        for m in re.finditer(pat, text):
+            last_match = m.group(1)
+    if last_match:
+        return last_match
+
+    # 2. "选X"类标记 (次优先级)
+    choose_patterns = [
+        r'(?:选项|选择|选择答案)\s*([A-D])',
+        r'[选選]\s*([A-D])\s*(?:项|項|个)?',
+    ]
+    last_choose = None
+    for pat in choose_patterns:
+        for m in re.finditer(pat, text):
+            last_choose = m.group(1)
+    if last_choose:
+        return last_choose
+
+    # 3. 行尾/行首独立字母 (CoT格式: 每行一个选项判断)
+    lines = text.split('\n')
+    # 先找最后一行只有单个字母的情况
+    for line in reversed(lines):
+        stripped = line.strip()
+        if len(stripped) <= 2 and stripped.upper() in 'ABCD':
+            return stripped.upper()
+    # 再找行首带标记的字母
+    for line in reversed(lines):
+        m = re.search(r'(?:^|\s)([A-D])[.\s、．，）)](?:\s|$)', line.strip())
         if m:
             return m.group(1)
 
-    # 2. 寻找独立的选项字母（位于句首或括号中）
-    patterns2 = [
-        r'(?:^|\n)\s*([A-D])\s*[.\s、．，）)]?\s*(?:$|\n)',  # 行首或行尾的字母
-        r'[（(]\s*([A-D])\s*[）)]',  # 括号中的字母
-    ]
-    for pat in patterns2:
-        m = re.search(pat, text, re.MULTILINE)
-        if m:
-            return m.group(1)
+    # 4. 括号中的字母
+    bracket_matches = re.findall(r'[（(]\s*([A-D])\s*[）)]', text)
+    if bracket_matches:
+        return bracket_matches[-1]  # 最后一个括号中的
 
-    # 3. 如果文本很短且只有单个大写字母
+    # 5. 中文上下文中最后出现的独立字母
+    # 匹配"是X" "为X" "选X" 后面的字母
+    context_matches = re.findall(r'(?:是|为|选|选择)\s*([A-D])\s*(?:[。，、．\s]|$)', text)
+    if context_matches:
+        return context_matches[-1]
+
+    # 6. 如果文本很短且以字母开头
     text_clean = text.strip().upper()
-    if len(text_clean) <= 3 and text_clean and text_clean[0] in 'ABCD':
+    if len(text_clean) <= 3 and text_clean[0] in 'ABCD':
         return text_clean[0]
 
-    # 4. 在整个文本中寻找最后一个独立出现的选项字母
-    # （CoT输出中，答案通常在最后）
-    lines = text.split('\n')
-    for line in reversed(lines):
-        line = line.strip()
-        if len(line) <= 3 and line.upper() in 'ABCD':
-            return line.upper()
-        m = re.search(r'(?:^|\s)([A-D])(?:\s|$)', line)
-        if m:
-            return m.group(1)
-
-    # 5. 最后的fallback: 找第一个大写A-D字母
-    for ch in text_clean:
-        if ch in 'ABCD':
-            return ch
+    # 7. 最终fallback: 检查是否只有一个A-D字母出现且不连续
+    found = [c for c in text_clean if c in 'ABCD']
+    if len(found) == 1:
+        return found[0]
 
     return None
 
