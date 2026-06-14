@@ -1,14 +1,14 @@
 """
 SFT 训练脚本 — 基于 TRL SFTTrainer + WandB
 用法:
-  # 本地测试运行 (CPU，20条数据，1步)
-  python sft/train.py --test
+  # 使用YAML配置文件
+  python sft/train.py --config sft/config.yaml
 
-  # 完整训练 (需要 GPU 或 Colab)
+  # 命令行覆盖配置
   python sft/train.py --model Qwen/Qwen2.5-0.5B --epochs 2 --batch_size 4
 
-  # 用自定义数据集
-  python sft/train.py --train_data data/v1.0/train.json --val_data data/v1.0/val.json
+  # 本地测试运行 (CPU，20条数据，1步)
+  python sft/train.py --test
 """
 import argparse, json, os, sys
 from pathlib import Path
@@ -41,7 +41,27 @@ DEFAULTS = {
     "logging_steps": 10,
     "wandb_project": "szzk-llm",
     "wandb_entity": "33350441-sightwhale",
+    "system_prompt": "你是一个专业的中学学科答疑助手，请用简洁准确的语言回答问题。",
 }
+
+SYSTEM_PROMPT = DEFAULTS["system_prompt"]
+
+
+def load_config(config_path: str) -> dict:
+    """从YAML文件加载配置（可选依赖）"""
+    try:
+        import yaml
+        with open(config_path, encoding="utf-8") as f:
+            cfg = yaml.safe_load(f)
+        # 合并：YAML覆盖默认值
+        merged = {**DEFAULTS, **{k: v for k, v in cfg.items() if v is not None}}
+        return merged
+    except ImportError:
+        print("  [WARN] PyYAML未安装，使用命令行参数。pip install pyyaml")
+        return DEFAULTS
+    except FileNotFoundError:
+        print(f"  [WARN] 配置文件不存在: {config_path}，使用默认值")
+        return DEFAULTS
 
 
 def format_chat(example: dict) -> dict:
@@ -78,20 +98,40 @@ def load_data(train_path: str, val_path: str, test_mode: bool = False):
 
 def main():
     parser = argparse.ArgumentParser(description="SFT 训练脚本")
+    parser.add_argument("--config", default=None, help="YAML配置文件路径（如 sft/config.yaml）")
     parser.add_argument("--test", action="store_true", help="测试模式：少量数据，1个epoch，不记录WandB")
-    parser.add_argument("--model", default=DEFAULTS["model"])
-    parser.add_argument("--train_data", default=DEFAULTS["train_data"])
-    parser.add_argument("--val_data", default=DEFAULTS["val_data"])
-    parser.add_argument("--output_dir", default=DEFAULTS["output_dir"])
-    parser.add_argument("--epochs", type=int, default=DEFAULTS["epochs"])
-    parser.add_argument("--batch_size", type=int, default=DEFAULTS["batch_size"])
-    parser.add_argument("--gradient_accumulation", type=int, default=DEFAULTS["gradient_accumulation"])
-    parser.add_argument("--learning_rate", type=float, default=DEFAULTS["learning_rate"])
-    parser.add_argument("--max_seq_length", type=int, default=DEFAULTS["max_seq_length"])
+    parser.add_argument("--model", default=None)
+    parser.add_argument("--train_data", default=None)
+    parser.add_argument("--val_data", default=None)
+    parser.add_argument("--output_dir", default=None)
+    parser.add_argument("--epochs", type=int, default=None)
+    parser.add_argument("--batch_size", type=int, default=None)
+    parser.add_argument("--gradient_accumulation", type=int, default=None)
+    parser.add_argument("--learning_rate", type=float, default=None)
+    parser.add_argument("--max_seq_length", type=int, default=None)
     parser.add_argument("--use_lora", action="store_true", help="使用 LoRA 微调（节省显存）")
     parser.add_argument("--lora_r", type=int, default=16)
     parser.add_argument("--lora_alpha", type=int, default=32)
     args = parser.parse_args()
+
+    # ── 0. 加载配置（YAML 或 默认值）──
+    cfg = DEFAULTS.copy()
+    if args.config:
+        cfg = load_config(args.config)
+
+    # 命令行参数优先级高于配置文件
+    for key in ["model", "train_data", "val_data", "output_dir",
+                "epochs", "batch_size", "gradient_accumulation",
+                "learning_rate", "max_seq_length", "use_lora",
+                "lora_r", "lora_alpha"]:
+        val = getattr(args, key, None)
+        if val is not None and val is not False:
+            cfg[key] = val
+        if key in cfg:
+            setattr(args, key, cfg[key])  # 写回args供后续代码使用
+    # 更新 system_prompt
+    global SYSTEM_PROMPT
+    SYSTEM_PROMPT = cfg.get("system_prompt", DEFAULTS["system_prompt"])
 
     test_mode = args.test
 

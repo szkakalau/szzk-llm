@@ -1,0 +1,34 @@
+# SZZKLLM 训练配置文件
+# 用法: python sft/train.py --config sft/config.yaml
+
+# ── 模型 ──
+model: Qwen/Qwen2.5-0.5B
+
+# ── 数据 ──
+train_data: data/v1.1/train.json
+val_data: data/v1.0/val.json
+
+# ── 输出 ──
+output_dir: models/v1.1
+
+# ── 训练超参数 ──
+epochs: 2
+batch_size: 4
+gradient_accumulation: 2
+learning_rate: 2e-5
+warmup_steps: 50
+max_seq_length: 1024
+save_steps: 100
+logging_steps: 10
+
+# ── LoRA (可选，节省显存) ──
+use_lora: false
+lora_r: 16
+lora_alpha: 32
+
+# ── WandB ──
+wandb_project: szzk-llm
+wandb_entity: 33350441-sightwhale
+
+# ── System Prompt ──
+system_prompt: "你是一个专业的中学学科答疑助手，请用简洁准确的语言回答问题。"
