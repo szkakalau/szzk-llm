@@ -22,6 +22,11 @@ import argparse, json, os, random, sys, time
 from pathlib import Path
 from typing import Optional
 
+# Force UTF-8 on Windows
+if sys.platform == "win32":
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 # ============================================================
 # CoT 生成 Prompt
 # ============================================================
@@ -191,7 +196,7 @@ def main():
     parser = argparse.ArgumentParser(description="生成 CoT 数据")
     parser.add_argument("--api-key", default=os.environ.get("DEEPSEEK_API_KEY", ""),
                         help="API Key (或设环境变量 DEEPSEEK_API_KEY)")
-    parser.add_argument("--base-url", default="https://api.deepseek.com/v1",
+    parser.add_argument("--base-url", default="https://api.deepseek.com",
                         help="API 基础URL")
     parser.add_argument("--model", default="deepseek-chat", help="模型名称")
     parser.add_argument("--num", type=int, default=200, help="生成CoT的题目数")
