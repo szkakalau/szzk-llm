@@ -45,12 +45,14 @@ DEFAULTS = {
 
 
 def format_chat(example: dict) -> dict:
-    """将 QA 对格式化为 ChatML 格式（含 system prompt）"""
+    """将 QA 对格式化为 ChatML 格式（含 system prompt）
+    如果数据包含 cot 字段，则 assistant 回复使用 CoT 推理+答案"""
+    assistant_content = example.get("cot", example["answer"])
     return {
         "messages": [
             {"role": "system", "content": "你是一个专业的中学学科答疑助手，请用简洁准确的语言回答问题。"},
             {"role": "user", "content": example["question"]},
-            {"role": "assistant", "content": example["answer"]},
+            {"role": "assistant", "content": assistant_content},
         ]
     }
 
