@@ -1,15 +1,17 @@
 # -*- coding: utf-8 -*-
 """
-Day 9: 自动评分脚本
+Day 11: 双指标体系评测 — General Score + Error Recovery Score
 用法:
-  python benchmark/evaluate.py                          # 默认模型 models/v1.1/final
+  python benchmark/evaluate.py                          # 默认模型，首次评测
   python benchmark/evaluate.py --model models/v1.0/final
-  python benchmark/evaluate.py --test                  # 只测前10题，快速验证
-  python benchmark/evaluate.py --json                  # 输出JSON格式结果
+  python benchmark/evaluate.py --error-set benchmark/error_set_v1.0.json  # 双指标
+  python benchmark/evaluate.py --test                  # 快速验证(10题)
+  python benchmark/evaluate.py --json                  # JSON输出
 """
 import argparse, json, re, sys, time, os
 from collections import defaultdict
 from pathlib import Path
+from datetime import datetime
 
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -18,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from sft.infer import load_model, generate
 
 BENCHMARK_PATH = "benchmark/test_set_v0.1.json"
+ERROR_SET_PATH = "benchmark/error_set_v1.1.json"  # 默认错误集路径
 
 
 def extract_answer(text: str) -> str | None:
@@ -106,12 +109,94 @@ def extract_answer(text: str) -> str | None:
     return None
 
 
+# ═══════════════════════════════════════════════════════
+# Error Set 管理
+# ═══════════════════════════════════════════════════════
+def load_error_set(path: str) -> dict | None:
+    """加载已有错误集"""
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def classify_error(output: str, expected: str) -> str:
+    """自动分类错误类型"""
+    output_clean = output.strip()
+    # 格式错误：输出包含选项字母但不是预期格式
+    if not output_clean:
+        return "format"  # 空输出
+    if output_clean[0] in "ABCD" and len(output_clean) > 10:
+        return "format"  # 输出字母但附带大量文本（可能是CoT过度）
+    # 幻觉错误：输出与题目无关
+    if "【考点】" in output_clean or "解析：" in output_clean:
+        return "hallucination"  # 训练数据格式残留
+    # 知识错误：输出选项字母但选错了
+    if output_clean[0] in "ABCD":
+        return "knowledge"
+    # 默认
+    return "logic"
+
+
+def merge_error_sets(old_errors: list, new_errors: list, model_version: str) -> list:
+    """合并新旧错误集：新错误加入，已修复的更新状态"""
+    merged = {e["id"]: e for e in old_errors} if old_errors else {}
+
+    for new_err in new_errors:
+        qid = new_err["id"]
+        if qid in merged:
+            # 之前错过，现在答对了 → 标记为 fixed
+            merged[qid]["status"] = "fixed"
+            merged[qid]["fixed_in"] = model_version
+        else:
+            # 新出现的错误
+            merged[qid] = {
+                "id": qid,
+                "subject": new_err.get("subject", ""),
+                "question": new_err.get("question", ""),
+                "correct_answer": new_err.get("expected", ""),
+                "error_type": new_err.get("error_type", "unknown"),
+                "model_answer": new_err.get("predicted", ""),
+                "status": "open",
+                "first_appeared": model_version,
+                "fixed_in": None,
+            }
+
+    return list(merged.values())
+
+
+def save_error_set(errors: list, path: str, model_version: str):
+    """保存错误集"""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    data = {
+        "version": model_version,
+        "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "total_errors": len([e for e in errors if e.get("status") == "open"]),
+        "total_fixed": len([e for e in errors if e.get("status") == "fixed"]),
+        "errors": errors,
+    }
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+# ═══════════════════════════════════════════════════════
+# 评测核心
+# ═══════════════════════════════════════════════════════
 def evaluate_model(model, tokenizer, device: str, questions: list,
-                   max_new_tokens: int = 256) -> dict:
-    """对模型在benchmark上评测"""
+                   max_new_tokens: int = 256,
+                   prev_error_set: dict = None) -> dict:
+    """对模型在benchmark上评测。若提供 prev_error_set，计算双指标。"""
+    # 构建已有错误ID集合
+    prev_error_ids = set()
+    if prev_error_set:
+        prev_error_ids = {e["id"] for e in prev_error_set.get("errors", [])
+                          if e.get("status") == "open"}
+
     results = {
         "total": len(questions),
         "correct": 0,
+        "recovery_total": len(prev_error_ids),      # 上次错题总数
+        "recovery_correct": 0,                       # 本次在这些错题上答对的数量
         "by_subject": defaultdict(lambda: {"correct": 0, "total": 0}),
         "errors": [],
         "details": [],
@@ -136,6 +221,9 @@ def evaluate_model(model, tokenizer, device: str, questions: list,
         if is_correct:
             results["correct"] += 1
             results["by_subject"][subj]["correct"] += 1
+            # 检查是否是之前错过的题
+            if q["id"] in prev_error_ids:
+                results["recovery_correct"] += 1
         else:
             results["errors"].append({
                 "id": q["id"],
@@ -143,7 +231,8 @@ def evaluate_model(model, tokenizer, device: str, questions: list,
                 "question": q["question"][:100],
                 "expected": true_letter,
                 "predicted": pred_letter or "?",
-                "raw_output": pred[:150],
+                "error_type": classify_error(pred, true_letter),
+                "raw_output": pred[:200],
             })
 
         results["details"].append({
@@ -161,16 +250,41 @@ def evaluate_model(model, tokenizer, device: str, questions: list,
     return results
 
 
-def print_report(results: dict):
-    """打印评测报告"""
+def print_report(results: dict, prev_error_set: dict = None):
+    """打印评测报告（含双指标）"""
     print(f"\n{'=' * 60}")
     print("BENCHMARK v0.1 评测报告")
     print(f"{'=' * 60}")
     print(f"  总题数: {results['total']}")
     print(f"  正确: {results['correct']}")
     print(f"  错误: {results['total'] - results['correct']}")
-    print(f"  准确率: {results['accuracy']:.1f}%")
     print(f"  耗时: {results['time']:.1f}s")
+
+    # 双指标
+    print(f"\n{'─' * 40}")
+    print(f"  📊 双指标:")
+    gen_acc = results['accuracy']
+    print(f"  General Score:        {results['correct']:3d}/{results['total']:3d} = {gen_acc:5.1f}%")
+
+    if results.get("recovery_total", 0) > 0:
+        rec_acc = results["recovery_correct"] / results["recovery_total"] * 100
+        print(f"  Error Recovery Score:  {results['recovery_correct']:3d}/{results['recovery_total']:3d} = {rec_acc:5.1f}%")
+        delta = rec_acc - gen_acc
+        print(f"  Recovery vs General:  {'+' if delta >= 0 else ''}{delta:+.1f}%")
+    else:
+        print(f"  Error Recovery:        N/A (首次评测，无历史错误集)")
+
+    # 错误类型分布
+    if results["errors"]:
+        err_types = defaultdict(int)
+        for e in results["errors"]:
+            err_types[e.get("error_type", "unknown")] += 1
+        print(f"\n  错误类型分布:")
+        type_labels = {"knowledge": "知识错误", "logic": "逻辑错误",
+                       "format": "格式错误", "hallucination": "幻觉错误"}
+        for t, count in sorted(err_types.items(), key=lambda x: -x[1]):
+            label = type_labels.get(t, t)
+            print(f"    {label} ({t}): {count}")
 
     print(f"\n{'─' * 40}")
     print(f"  各科得分:")
@@ -189,21 +303,45 @@ def print_report(results: dict):
     # 错误样例（前5条）
     if results["errors"]:
         print(f"\n{'─' * 40}")
-        print(f"  错误样例 (前5条):")
+        print(f"  打开的错误 (前5条):")
         for err in results["errors"][:5]:
-            print(f"  #{err['id']} [{err['subject']}] 预期:{err['expected']} 预测:{err['predicted']}")
+            print(f"  #{err['id']} [{err['subject']}] 预期:{err['expected']} "
+                  f"预测:{err['predicted']} [{err.get('error_type','?')}]")
             print(f"    Q: {err['question'][:80]}...")
-            if err["predicted"] == "?":
-                print(f"    Raw: {err['raw_output'][:100]}...")
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Benchmark 自动评分")
+    parser = argparse.ArgumentParser(description="Benchmark 双指标评测")
     parser.add_argument("--model", default="models/v1.1/final", help="模型路径")
     parser.add_argument("--benchmark", default=BENCHMARK_PATH, help="题库路径")
+    parser.add_argument("--error-set", default=None,
+                        help="历史错误集路径 (计算Error Recovery Score)")
+    parser.add_argument("--save-errors", default=None,
+                        help="保存当前错误集路径 (默认 benchmark/error_set_<version>.json)")
     parser.add_argument("--test", action="store_true", help="仅测前10题")
     parser.add_argument("--json", action="store_true", help="输出JSON格式")
     args = parser.parse_args()
+
+    # 提取模型版本名
+    model_version = os.path.basename(os.path.dirname(args.model)) or "unknown"
+
+    # 加载历史错误集
+    prev_error_set = None
+    if args.error_set:
+        print(f"加载历史错误集: {args.error_set}")
+        prev_error_set = load_error_set(args.error_set)
+        if prev_error_set:
+            open_count = sum(1 for e in prev_error_set.get("errors", [])
+                           if e.get("status") == "open")
+            print(f"  打开的错误: {open_count}")
+    elif os.path.exists(ERROR_SET_PATH):
+        print(f"自动加载已有错误集: {ERROR_SET_PATH}")
+        prev_error_set = load_error_set(ERROR_SET_PATH)
+        if prev_error_set:
+            open_count = sum(1 for e in prev_error_set.get("errors", [])
+                           if e.get("status") == "open")
+            if open_count > 0:
+                print(f"  打开的错误: {open_count} (将计算 Recovery Score)")
 
     # 加载题库
     print(f"加载题库: {args.benchmark}")
@@ -218,16 +356,30 @@ def main():
 
     # 评测
     print(f"\n开始评测 ({len(questions)} 题)...")
-    results = evaluate_model(model, tokenizer, device, questions)
+    results = evaluate_model(model, tokenizer, device, questions,
+                            prev_error_set=prev_error_set)
+
+    # 合并并保存错误集
+    save_path = args.save_errors or ERROR_SET_PATH
+    prev_errors = prev_error_set.get("errors", []) if prev_error_set else []
+    merged = merge_error_sets(prev_errors, results["errors"], model_version)
+    save_error_set(merged, save_path, model_version)
+    print(f"\n  错误集已保存: {save_path} "
+          f"(打开:{sum(1 for e in merged if e['status']=='open')}, "
+          f"已修复:{sum(1 for e in merged if e['status']=='fixed')})")
 
     # 输出
     if args.json:
-        # 简化JSON输出（排除details中的冗余信息）
         json_out = {
             "model": args.model,
+            "version": model_version,
             "total": results["total"],
             "correct": results["correct"],
             "accuracy": results["accuracy"],
+            "recovery_total": results.get("recovery_total", 0),
+            "recovery_correct": results.get("recovery_correct", 0),
+            "recovery_accuracy": (results["recovery_correct"] / results["recovery_total"] * 100
+                                  if results.get("recovery_total", 0) > 0 else None),
             "time": results["time"],
             "by_subject": {
                 s: {"correct": v["correct"], "total": v["total"],
@@ -238,7 +390,7 @@ def main():
         }
         print(json.dumps(json_out, ensure_ascii=False, indent=2))
     else:
-        print_report(results)
+        print_report(results, prev_error_set)
 
     return results
 
