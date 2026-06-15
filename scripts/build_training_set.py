@@ -8,7 +8,7 @@ from collections import Counter, defaultdict
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-INPUT = "data/extracted_questions.json"
+INPUT = "data/extracted_questions_answered.json"
 OUT_TRAIN = "data/clean_train.json"
 OUT_BENCH = "data/clean_bench.json"
 
@@ -91,6 +91,7 @@ for q in raw:
         "subject": subject,
         "year": q.get("year"),
         "source": q.get("source", ""),
+        "answer_source": q.get("answer_source", "original"),
     })
 
 # ── 去重 ──
@@ -119,8 +120,9 @@ print(f"  有效: {stats['valid']} → 去重: {len(unique)} (去{dupes}个重�
 print(f"\n各学科:")
 for subj in sorted(by_subj):
     qs = by_subj[subj]
+    ds = sum(1 for q in qs if q.get("answer_source") == "deepseek")
     years = sorted(set(q.get("year") for q in qs if q.get("year")))
-    print(f"  {subj:12s}: {len(qs):4d}题, 年份: {min(years)}-{max(years)}")
+    print(f"  {subj:12s}: {len(qs):4d}题, {min(years)}-{max(years)} (DeepSeek: {ds})")
 
 # ── 保存训练格式 ──
 # 训练格式: {"question": "...", "answer": "X", "subject": "..."}
