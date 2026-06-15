@@ -102,25 +102,47 @@ def extract_answer(text: str) -> str | None:
         return text_clean[0]
 
     # 7. 长文本末尾扫描 (CoT输出答案在最后200字符内)
-    if len(text) > 200:
-        tail = text[-200:]
-        # 在末尾找 "选X" "是X" "为X" 等模式
+    if len(text) > 150:
+        tail = text[-250:]
+        # 在末尾找各种答案标记
         tail_patterns = [
             r'(?:选[择]?|答案是?|为|是)\s*([A-D])\s*(?:[。，、\s]|$)',
-            r'([A-D])\s*(?:选项|正确|为正确答案)',
+            r'([A-D])\s*(?:选项|正确|为正确答案|符合题意)',
             r'(?:^|\s)([A-D])\s*$',  # 行尾独立字母
+            r'([A-D])\s*(?:[.。,，、．]|$)',  # 任意位置后跟标点的字母
         ]
         for pat in tail_patterns:
             matches = re.findall(pat, tail)
             if matches:
                 return matches[-1]  # 最后一个匹配
-        # 末尾100字符中的最后一个独立A-D字母
-        last_tail = tail[-100:]
-        tail_letters = re.findall(r'(?:^|\s)([A-D])(?:\s|[.。,，、．]|$)', last_tail)
-        if tail_letters:
-            return tail_letters[-1]
+        # 末尾150字符中最后一个独立A-D字母（更宽松）
+        last_tail = tail[-150:]
+        # 排除"ABCD"连续序列和选项列表
+        if not re.search(r'[A-D]{2,}', last_tail):
+            tail_letters = re.findall(r'(?:^|[\s。，、．])([A-D])(?:\s|[.。,，、．]|$)', last_tail)
+            if tail_letters:
+                return tail_letters[-1]
+            # 更宽松：末尾50字符内任何A-D（不在括号中的）
+            very_tail = tail[-50:]
+            loose = re.findall(r'(?<![（(])[A-D](?![）)])', very_tail)
+            if loose:
+                return loose[-1]
 
-    # 8. 最终fallback: 检查是否只有一个A-D字母出现且不连续
+    # 8. CoT逐项分析模式: "A选项错误...B选项正确...C选项不符合" 等
+    # 匹配 "X正确" "X选项正确" "X符合题意" "X项正确"
+    analysis_patterns = [
+        r'([A-D])\s*(?:选项|项)?\s*(?:正确|符合|对)',
+        r'([A-D])\s*(?:选项|项)?\s*(?:是正确|为正确|是对的)',
+        r'(?:正确.*?是|应选|答案.*?是)\s*([A-D])',
+    ]
+    last_analysis = None
+    for pat in analysis_patterns:
+        for m in re.finditer(pat, text):
+            last_analysis = m.group(1)
+    if last_analysis:
+        return last_analysis
+
+    # 9. 最终fallback: 检查是否只有一个A-D字母出现且不连续
     found = [c for c in text_clean if c in 'ABCD']
     if len(found) == 1:
         return found[0]

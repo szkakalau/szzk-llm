@@ -1,0 +1,92 @@
+[
+  {
+    "question": "圆的周长公式是______。A. C＝πr² B. C＝2πr C. C＝πd/2 D. C＝πr",
+    "answer": "B",
+    "subject": "math",
+    "type": "fact_card"
+  },
+  {
+    "question": "圆的面积公式是______。A. S＝2πr B. S＝πr² C. S＝πd D. S＝πr",
+    "answer": "B",
+    "subject": "math",
+    "type": "fact_card"
+  },
+  {
+    "question": "幂的乘方法则：(a²)³＝______。A. a⁵ B. a⁶ C. a⁸ D. a⁹",
+    "answer": "B",
+    "subject": "math",
+    "type": "fact_card"
+  },
+  {
+    "question": "同底数幂的除法：a⁶÷a²＝______。A. a³ B. a⁴ C. a⁸ D. a¹²",
+    "answer": "B",
+    "subject": "math",
+    "type": "fact_card"
+  },
+  {
+    "question": "人正常步行的速度约为______。A. 1.1m/s B. 10m/s C. 20m/s D. 0.1m/s",
+    "answer": "A",
+    "subject": "physics",
+    "type": "fact_card"
+  },
+  {
+    "question": "一个中学生的重力大约为______。A. 50N B. 500N C. 5000N D. 5N",
+    "answer": "B",
+    "subject": "physics",
+    "type": "fact_card"
+  },
+  {
+    "question": "人体正常体温约为______。A. 35℃ B. 37℃ C. 39℃ D. 42℃",
+    "answer": "B",
+    "subject": "physics",
+    "type": "fact_card"
+  },
+  {
+    "question": "光在真空中的传播速度是______。A. 340m/s B. 3×10⁶m/s C. 3×10⁸m/s D. 3×10⁴m/s",
+    "answer": "C",
+    "subject": "physics",
+    "type": "fact_card"
+  },
+  {
+    "question": "下列反应属于置换反应的是______。A. 化合反应 B. 分解反应 C. 单质+化合物→新单质+新化合物 D. 两种化合物交换成分",
+    "answer": "C",
+    "subject": "chemistry",
+    "type": "fact_card"
+  },
+  {
+    "question": "复分解反应的通式是______。A. A+B→AB B. AB→A+B C. A+BC→AC+B D. AB+CD→AD+CB",
+    "answer": "D",
+    "subject": "chemistry",
+    "type": "fact_card"
+  },
+  {
+    "question": "用排水法收集氧气是因为氧气______。A. 密度比空气大 B. 不易溶于水 C. 有刺激性气味 D. 能支持燃烧",
+    "answer": "B",
+    "subject": "chemistry",
+    "type": "fact_card"
+  },
+  {
+    "question": "'走头无路'的正确写法是______。A. 走頭无路 B. 走投无路 C. 走头無路 D. 走投無路",
+    "answer": "B",
+    "subject": "chinese",
+    "type": "fact_card"
+  },
+  {
+    "question": "'一诺千斤'的正确写法是______。A. 一诺千金 B. 一诺千斤 C. 一諾千金 D. 一諾千斤",
+    "answer": "A",
+    "subject": "chinese",
+    "type": "fact_card"
+  },
+  {
+    "question": "'迫不及待'的含义是______。A. 急得不能等待 B. 被迫不能等待 C. 不能迫切 D. 来不及",
+    "answer": "A",
+    "subject": "chinese",
+    "type": "fact_card"
+  },
+  {
+    "question": "散文最重要的特点是______。A. 必须有完整故事 B. 形散神不散 C. 必须虚构 D. 必须押韵",
+    "answer": "B",
+    "subject": "chinese",
+    "type": "fact_card"
+  }
+]
