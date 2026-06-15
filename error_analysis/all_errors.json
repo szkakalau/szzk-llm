@@ -1,0 +1,3911 @@
+{
+  "meta": {
+    "description": "SZZKLLM 统一错误数据库 — 合并 v1.0/v1.1/v1.2 所有错误记录",
+    "generated": "2026-06-15 15:03:40",
+    "benchmark": "test_set_v0.1 (200题)",
+    "versions_included": [
+      "v1.0",
+      "v1.1",
+      "v1.2"
+    ],
+    "ready_for": "D16: DeepSeek API 深度错误分类"
+  },
+  "statistics": {
+    "total_unique_errors": 134,
+    "currently_open": 72,
+    "currently_fixed": 62,
+    "persistent_errors": 58,
+    "new_in_v1_2": 4,
+    "open_by_subject": {
+      "math": 14,
+      "physics": 13,
+      "history": 10,
+      "english": 12,
+      "chinese": 8,
+      "chemistry": 8,
+      "politics": 7
+    },
+    "open_by_type": {
+      "logic": 49,
+      "format": 6,
+      "knowledge": 17
+    },
+    "persistent_by_subject": {
+      "math": 9,
+      "physics": 13,
+      "history": 9,
+      "english": 7,
+      "chinese": 7,
+      "chemistry": 7,
+      "politics": 6
+    },
+    "open_count_by_version": {
+      "v1.0": 72,
+      "v1.1": 107,
+      "v1.2": 67
+    }
+  },
+  "errors": [
+    {
+      "id": 2,
+      "subject": "math",
+      "question": "解析：小朱与爸爸都走了1500－60＝1440，小朱速度为x米/ 分，则爸爸速度为（x＋100）米/ 分，小朱多用时10分钟，可列方程为：9.如图1，有一张一个角为30°，最小边长为2的直角三角形纸片，沿图中所示的中位线剪开后，将两部分拼成一个四边形，所得四边形的周长是（ ）A.8或 B.10或C.10或 D.8或",
+      "options": [
+        "A. 8或",
+        "B. 10或",
+        "C. 10或",
+        "D. 8或"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "fixed",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "format",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=format)",
+        "v1.1:fixed(pred=?, err=format)",
+        "v1.2:fixed(pred=?, err=format)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 3,
+      "subject": "math",
+      "question": "故选：C．2. 如图为出现在深圳街头的新型无线充电石墩，关于石墩的三视图的描述，正确的是（ ） A. 主视图和左视图相同 B. 主视图和俯视图相同C. 左视图和俯视图相同 D. 三个视图都相同",
+      "options": [
+        "C. 2. 如图为出现在深圳街头的新型无线充电石墩，关于石墩的三视图的描述，正确的是（ ）",
+        "A. 主视图和左视图相同",
+        "B. 主视图和俯视图相同",
+        "C. 左视图和俯视图相同",
+        "D. 三个视图都相同"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "fixed",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "logic",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:open(pred=C, err=logic)",
+        "v1.1:fixed(pred=C, err=logic)",
+        "v1.2:fixed(pred=C, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 4,
+      "subject": "math",
+      "question": "说明：本卷共6页．考试时间90分钟，满分100分．答题前，请将姓名、考号、考点、考场和座位号填写在答题卡相应的区域，并贴好条形码．考试结束后，请将本卷和答题卡一并上交．一、选择题（本大题共8小题，每小题3分，共24分，每小题有四个选项，其中只有一个是正确的）1. 节约水5吨记作吨，则浪费水2吨记作（ ）A. 吨 B. 吨 C. 吨 D. 吨",
+      "options": [
+        "A. 吨",
+        "B. 吨",
+        "C. 吨",
+        "D. 吨"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "fixed",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:fixed(pred=B, err=knowledge)",
+        "v1.1:fixed(pred=B, err=knowledge)",
+        "v1.2:fixed(pred=B, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 5,
+      "subject": "math",
+      "question": "选项C能找到这样的一个点，使图形绕某一点旋转180度后和原图形完全重合，所以是中心对称图形，故选：C．2. 如图，实数*a*，*b*，*c*，*d*在数轴上表示如下，则最小的实数为（ ） A. *a* B. *b* C. *c* D. *d*",
+      "options": [
+        "C. 2. 如图，实数*a*，*b*，*c*，*d*在数轴上表示如下，则最小的实数为（ ）",
+        "A. *a*",
+        "B. *b*",
+        "C. *c*",
+        "D. *d*"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "fixed",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:fixed(pred=B, err=logic)",
+        "v1.1:fixed(pred=B, err=logic)",
+        "v1.2:fixed(pred=B, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 6,
+      "subject": "math",
+      "question": "解析：如下图，BC＝2，DE＝1，AB＝4，AC＝2。（1）AE与EC重合时，周长为：8；（2）AD与BD重合时，周长为：4＋2所以，选D。10.下列命题是真命题的有（ ）①对顶角相等；②两直线平行，内错角相等；③两个锐角对应相等的两个直角三角形全等；④有三个角是直角的四边形是矩形；⑤平分弦的直径垂直于弦，并且平分弦所对的弧。A..1个 B.2个 C.3个 D.4个",
+      "options": [
+        "A. .1个",
+        "B. 2个",
+        "C. 3个",
+        "D. 4个"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "fixed",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:fixed(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 7,
+      "subject": "math",
+      "question": "9. 爬坡时坡角与水平面夹角为，则每爬1m耗能，若某人爬了1000m，该坡角为30°，则他耗能（参考数据：，）（ ） A. 58J B. 159J C. 1025J D. 1732J",
+      "options": [
+        "A. 58J",
+        "B. 159J",
+        "C. 1025J",
+        "D. 1732J"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:fixed(pred=D, err=logic)",
+        "v1.1:open(pred=D, err=logic)",
+        "v1.2:open(pred=D, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 8,
+      "subject": "math",
+      "question": "解析：A、C、D都既是轴对称图形又是中心对称图形，而B是轴对称图形，不是中心对称图形。5.某校有21名同学们参加某比赛，预赛成绩各不同，要取前11名参加决赛，小颖已经知道了自己的成绩，她想知道自己能否进入决赛，只需要再知道这21名同学成绩的（ ）A.最高分 B.中位数 C.极差 D.平均数",
+      "options": [
+        "A. 最高分",
+        "B. 中位数",
+        "C. 极差",
+        "D. 平均数"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "format",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=format)",
+        "v1.1:open(pred=?, err=format)",
+        "v1.2:open(pred=?, err=format)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 9,
+      "subject": "math",
+      "question": "解析：分式的值为0，即，所以，x＝2，选C。7.在平面直角坐标系中，点P（－20，）与点Q（，13）关于原点对称，则的值为（ ）A.33 B.-33 C.-7 D.7",
+      "options": [
+        "A. 33",
+        "B. -33",
+        "C. -7",
+        "D. 7"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "fixed",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "A",
+      "error_history": [
+        "v1.0:fixed(pred=A, err=logic)",
+        "v1.1:fixed(pred=A, err=logic)",
+        "v1.2:fixed(pred=A, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 10,
+      "subject": "math",
+      "question": "解析：21个数的中位数即为第11名的成绩，对比第11名即知自己是否被录取。6.分式的值为0，则（ ）A.=-2 B.= C.=2 D.=0",
+      "options": [
+        "A. =-2",
+        "B. =",
+        "C. =2",
+        "D. =0"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "format",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:open(pred=D, err=format)",
+        "v1.1:open(pred=D, err=format)",
+        "v1.2:open(pred=D, err=format)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 11,
+      "subject": "math",
+      "question": "∵一束平行光线照射平面镜后反射，若入射光线与平面镜夹角，∴，，∴，则，∵光线是平行的，即，∴，故选：B．6. 在如图的三个图形中，根据尺规作图的痕迹，能判断射线平分的是（ ） A. ①② B. ①③ C. ②③ D. 只有①",
+      "options": [
+        "B. 6. 在如图的三个图形中，根据尺规作图的痕迹，能判断射线平分的是（ ）",
+        "A. ①②",
+        "B. ①③",
+        "C. ②③",
+        "D. 只有①"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "not_tested",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.2",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": true
+    },
+    {
+      "id": 12,
+      "subject": "math",
+      "question": "1.－3的绝对值是（ ）A.3 B.-3 C.- D.",
+      "options": [
+        "A. 3",
+        "B. -3",
+        "C. -"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:open(pred=C, err=logic)",
+        "v1.1:open(pred=C, err=logic)",
+        "v1.2:open(pred=C, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 13,
+      "subject": "math",
+      "question": "7. 如图为商场某品牌椅子侧面图，，与地面平行，，则（ ） A. 70° B. 65° C. 60° D. 50°",
+      "options": [
+        "A. 70°",
+        "B. 65°",
+        "C. 60°",
+        "D. 50°"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:fixed(pred=C, err=logic)",
+        "v1.1:open(pred=C, err=logic)",
+        "v1.2:fixed(pred=C, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 14,
+      "subject": "math",
+      "question": "8. 下列说法错误的是（ ）A. 对角线垂直且互相平分的四边形是菱形 B. 同圆或等圆中，同弧对应的圆周角相等C. 对角线相等的四边形是矩形 D. 对角线垂直且相等的四边形是正方形",
+      "options": [
+        "A. 对角线垂直且互相平分的四边形是菱形",
+        "B. 同圆或等圆中，同弧对应的圆周角相等",
+        "C. 对角线相等的四边形是矩形",
+        "D. 对角线垂直且相等的四边形是正方形"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:fixed(pred=D, err=knowledge)",
+        "v1.1:open(pred=D, err=knowledge)",
+        "v1.2:open(pred=D, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 15,
+      "subject": "math",
+      "question": "5. 如图，在平行四边形中，，，将线段水平向右平移*a*个单位长度得到线段，若四边形为菱形时，则*a*的值为（ ） A 1 B. 2 C. 3 D. 4",
+      "options": [
+        "A. 1",
+        "B. 2",
+        "C. 3",
+        "D. 4"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 17,
+      "subject": "math",
+      "question": "下列图形中，是轴对称图形的是（ ）A. 平行四边形 B. 直角三角形 C. 圆 D. 梯形",
+      "options": [
+        "A. 平行四边形",
+        "B. 直角三角形",
+        "C. 圆",
+        "D. 梯形"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:open(pred=D, err=logic)",
+        "v1.1:open(pred=D, err=logic)",
+        "v1.2:open(pred=D, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 19,
+      "subject": "math",
+      "question": "计算 (-2a²)³ 的结果是（ ）A. -8a⁶ B. -6a⁶ C. 8a⁶ D. -8a⁵",
+      "options": [
+        "A. -8a⁶",
+        "B. -6a⁶",
+        "C. 8a⁶",
+        "D. -8a⁵"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:fixed(pred=D, err=logic)",
+        "v1.1:open(pred=D, err=logic)",
+        "v1.2:open(pred=D, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 20,
+      "subject": "math",
+      "question": "已知等腰三角形的一个底角为50°，则其顶角为（ ）A. 50° B. 80° C. 100° D. 130°",
+      "options": [
+        "A. 50°",
+        "B. 80°",
+        "C. 100°",
+        "D. 130°"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 21,
+      "subject": "math",
+      "question": "若点P(2, -3)关于x轴对称，则对称点的坐标为（ ）A. (2, 3) B. (-2, -3) C. (-2, 3) D. (2, -3)",
+      "options": [
+        "A. (2, 3)",
+        "B. (-2, -3)",
+        "C. (-2, 3)",
+        "D. (2, -3)"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:fixed(pred=B, err=logic)",
+        "v1.1:open(pred=B, err=logic)",
+        "v1.2:fixed(pred=B, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 24,
+      "subject": "math",
+      "question": "在Rt△ABC中，∠C=90°，AC=3，BC=4，则AB=（ ）A. 5 B. 6 C. 7 D. 8",
+      "options": [
+        "A. 5",
+        "B. 6",
+        "C. 7",
+        "D. 8"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:fixed(pred=B, err=knowledge)",
+        "v1.1:open(pred=B, err=knowledge)",
+        "v1.2:fixed(pred=B, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 25,
+      "subject": "math",
+      "question": "分解因式 x²-4 的结果是（ ）A. x(x-4) B. (x+2)(x-2) C. (x-2)² D. (x+2)²",
+      "options": [
+        "A. x(x-4)",
+        "B. (x+2)(x-2)",
+        "C. (x-2)²",
+        "D. (x+2)²"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 26,
+      "subject": "math",
+      "question": "已知圆的半径为5cm，则其周长为（ ）A. 5π cm B. 10π cm C. 25π cm D. 50π cm",
+      "options": [
+        "A. 5π cm",
+        "B. 10π cm",
+        "C. 25π cm",
+        "D. 50π cm"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:fixed(pred=C, err=logic)",
+        "v1.1:open(pred=C, err=logic)",
+        "v1.2:open(pred=C, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 27,
+      "subject": "math",
+      "question": "若一次函数 y=kx+b 中，k<0，b>0，则其图像经过（ ）A. 一二三象限 B. 一三四象限 C. 一二四象限 D. 二三四象限",
+      "options": [
+        "A. 一二三象限",
+        "B. 一三四象限",
+        "C. 一二四象限",
+        "D. 二三四象限"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 29,
+      "subject": "math",
+      "question": "下列运算正确的是（ ）A. a²·a³=a⁶ B. (a²)³=a⁵ C. a⁶÷a²=a³ D. (ab)²=a²b²",
+      "options": [
+        "A. a²·a³=a⁶",
+        "B. (a²)³=a⁵",
+        "C. a⁶÷a²=a³",
+        "D. (ab)²=a²b²"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:open(pred=C, err=knowledge)",
+        "v1.2:open(pred=B, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 30,
+      "subject": "math",
+      "question": "一个多边形的内角和为720°，则这个多边形是（ ）A. 四边形 B. 五边形 C. 六边形 D. 七边形",
+      "options": [
+        "A. 四边形",
+        "B. 五边形",
+        "C. 六边形",
+        "D. 七边形"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 31,
+      "subject": "math",
+      "question": "函数 y=√(x-1) 中，自变量x的取值范围是（ ）A. x>1 B. x≥1 C. x<1 D. x≤1",
+      "options": [
+        "A. x>1",
+        "B. x≥1",
+        "C. x<1",
+        "D. x≤1"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:open(pred=D, err=knowledge)",
+        "v1.1:open(pred=D, err=knowledge)",
+        "v1.2:open(pred=D, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 32,
+      "subject": "math",
+      "question": "已知x=1是方程2x²+kx-1=0的一个根，则k=（ ）A. -1 B. 0 C. 1 D. 2",
+      "options": [
+        "A. -1",
+        "B. 0",
+        "C. 1",
+        "D. 2"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 33,
+      "subject": "math",
+      "question": "如图，在平行四边形ABCD中，对角线AC与BD相交于点O，则下列结论不正确的是（ ）A. AB=CD B. AO=CO C. AC=BD D. BO=DO",
+      "options": [
+        "A. AB=CD",
+        "B. AO=CO",
+        "C. AC=BD",
+        "D. BO=DO"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 34,
+      "subject": "math",
+      "question": "将抛物线 y=x² 向右平移2个单位，再向下平移3个单位，得到的抛物线解析式为（ ）A. y=(x+2)²-3 B. y=(x-2)²-3 C. y=(x+2)²+3 D. y=(x-2)²+3",
+      "options": [
+        "A. y=(x+2)²-3",
+        "B. y=(x-2)²-3",
+        "C. y=(x+2)²+3",
+        "D. y=(x-2)²+3"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=C, err=knowledge)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 35,
+      "subject": "physics",
+      "question": "（2）箱梁的密度箱梁的重力架桥机在此过程中的有用功架桥机在此过程中的总功架桥机在此过程中的机械效率答：（1）见解析；（2）①箱梁的密度为2.5×10 3 kg/m 3 ；②架桥机在此过程中的有用功为5×10 6 J；③架桥机在此过程中的机械效率为50。五、综合分析题20. 熊猫公交是深圳引进的一款人工智能自动驾驶客车，在行驶的过程中，车上的乘客几乎感受不到颠簸和急刹。同时，熊猫公交采用独创的手脉识别技术，其工作流程如下图甲所示，其系统采用近红外线采集手脉特征，采用非接触的形式采集手部皮肤以下三毫米的血咏特征，然后进行生物比对。有人对坐熊猫公交车坐着不颠簸的原因提出了以下几个猜想：猜想：①驾驶速度；②熊猫公交车中座椅的高度；③座椅的软硬程度；某兴趣小组做如下探究实验。用相同的力把2个相同的湿篮球，分别在硬板凳和软沙发垫上按压，硬板凳和软沙发上出现了如图乙、内所示的水渍；（1）本实验验证了上面的猜想________；图乙和丙中水渍较小的是印在_______（选填“硬板凳\"或“软沙发垫”）上，本实验采用的实验方法是________；（2）若采用400 N的压力按压在接触面积为0.04 m 2 的硬板凳面上，其压强为_______Pa；（3）手脉识别技术彩用的红外线属于________；A.电磁波 B.超声波（4）使用红外线的好处是________。",
+      "options": [
+        "A. 电磁波",
+        "B. 超声波（4）使用红外线的好处是________。"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 37,
+      "subject": "physics",
+      "question": "故选C。4. 晓凤同学提出问题：收割机用四冲程柴油机提供动力，其中压缩冲程过程中，柴油机汽缸内气体（　　）A. 质量变大 B. 内能减小 C. 体积变大 D. 温度升高",
+      "options": [
+        "A. 质量变大",
+        "B. 内能减小",
+        "C. 体积变大",
+        "D. 温度升高"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:fixed(pred=B, err=knowledge)",
+        "v1.1:open(pred=B, err=knowledge)",
+        "v1.2:fixed(pred=B, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 40,
+      "subject": "physics",
+      "question": "故选C。3. 下列说法错误的是（　　）A. 月亮是光源 B. 灯光秀的光----光的直线传播C. 桥的倒影----光的反射 D. 彩虹------光的色散",
+      "options": [
+        "A. 月亮是光源",
+        "B. 灯光秀的光----光的直线传播",
+        "C. 桥的倒影----光的反射",
+        "D. 彩虹------光的色散"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:open(pred=D, err=knowledge)",
+        "v1.1:open(pred=D, err=knowledge)",
+        "v1.2:fixed(pred=D, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 44,
+      "subject": "physics",
+      "question": "故A错误；B．正常情况下，人的心跳1min在70次左右，故B正确；C．人正常的体温是37℃左右，故C错误；D．家用电冰箱的功率在220W左右，工作电流在 左右，故D正确。故选BD。13. 下列例子中，密度不变的是（　　）A. 水结成冰 B. 粉笔用了一半C. 铁杵磨成针 D. 氧气瓶中的氧气被用去一半",
+      "options": [
+        "A. 水结成冰",
+        "B. 粉笔用了一半",
+        "C. 铁杵磨成针",
+        "D. 氧气瓶中的氧气被用去一半"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 45,
+      "subject": "physics",
+      "question": "16. 如下图甲所示，闭合开关后，在滑片P由b端向a端移动的过程中，电压表示数U随滑动变阻器的电阻R 2 变化的关系图像如下图乙所示，下列说法错误的是（ ）A. 电源电压是6VB. R 2 的最大阻值是20ΩC. R 1 的电阻是10ΩD. 当滑片P移动中点时，10s内电流通过R 1 产生的热量是18J",
+      "options": [
+        "A. 电源电压是6V",
+        "B. R 2 的最大阻值是20Ω",
+        "C. R 1 的电阻是10Ω",
+        "D. 当滑片P移动中点时，10s内电流通过R 1 产生的热量是18J"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=B, err=knowledge)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 46,
+      "subject": "physics",
+      "question": "故选B。主题二：物理与航天6. 2024年6月2日，嫦娥六号探测器成功着陆月背面南极艾特肯盆地，这是人类历史上首次登陆月球背面，图是嫦娥六号探测器，成功着陆月球背面3D动画模拟图。嫦娥六号从月球带回月壤，月壤（　　） A. 质量不变 B. 质量变小 C. 重力变小 D. 重力不变",
+      "options": [
+        "A. 质量不变",
+        "B. 质量变小",
+        "C. 重力变小",
+        "D. 重力不变"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:open(pred=C, err=logic)",
+        "v1.1:open(pred=C, err=logic)",
+        "v1.2:open(pred=C, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 47,
+      "subject": "physics",
+      "question": "一、单选题（每小题只有一个选项符合题意，每题2分，共20分）1. 下列有关声现象表述正确的是（　　）A. 图甲，分别用大小相同的力敲击四个装水的瓶子，产生的声音音调相同B. 图乙，医生用听诊器判断患者的情况，利用了声音传递能量C. 图丙，逐渐抽出玻璃罩内的空气，听见闹铃声越来越小，推理得出真空不能传声D. 图丁，禁止鸣笛是在传播过程中减少噪声",
+      "options": [
+        "A. 图甲，分别用大小相同的力敲击四个装水的瓶子，产生的声音音调相同",
+        "B. 图乙，医生用听诊器判断患者的情况，利用了声音传递能量",
+        "C. 图丙，逐渐抽出玻璃罩内的空气，听见闹铃声越来越小，推理得出真空不能传声",
+        "D. 图丁，禁止鸣笛是在传播过程中减少噪声"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:open(pred=D, err=knowledge)",
+        "v1.1:open(pred=D, err=knowledge)",
+        "v1.2:open(pred=D, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 48,
+      "subject": "physics",
+      "question": "（2）让钢球从斜面上由静止滚下，获得初始速度，进而获得动能，进行研究，因而乙实验中的研究对象是钢球，钢球由不同的高度由静止滚下，到达斜面底端的初始速度不同，因此实验目的是探究物体的动能大小与速度大小的关系．20. 如图所示，在“测量小灯泡的电功率”的实验中，电源电压为4.5V，小灯泡的额定电压为2.5V． （1）请你用笔画线代替导线，将甲图中的实物图连接完整（要求滑动变阻器的滑片P向*B*端移动时小灯泡变暗）．（ ）（2）某小组连接好电路后，检查连线正确，但闭合开关后发现小灯泡发出明亮的光且很快熄灭．出现这一故障的原因可能是________．排除故障后，闭合开关，移动滑动变阻器的滑片P到某处，电压表的示数如乙图所示．若要测量小灯泡的额定功率，应将图中的滑片P向________（选填“*A*”或“*B*”）端移动，直到电压表的示数为2.5V，此时电流表的示数如丙图所示，则小灯泡的额定功率为_______W．（3）测出小灯泡的额定功率后，某同学又把小灯泡两端电压调为额定电压的一半，发现测得的功率并不等于其额定功率的四分之一，其原因是______________．（4）若将小灯泡换成定值电阻，且电路连接完好，还可以完成的实验是________（填标号）．A．探究电流与电压的关系 B．探究电流与电阻的关系",
+      "options": [
+        "A. 探究电流与电压的关系",
+        "B. 探究电流与电阻的关系"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "not_tested"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 49,
+      "subject": "physics",
+      "question": "一、选择题（共16小题，每小题1.5分，共24分。在每小题给出的4个选项中，只有一项符合题目要求。）1. 下列有关光的表述正确的是（ ）A. “凿壁偷光”——光的直线传播B. 岸上的人看到水中的鱼——光的镜面反射C. “海市蜃楼”——光的漫反射D. 驾驶员看到后视镜中的景物——光的折射",
+      "options": [
+        "A. “凿壁偷光”——光的直线传播",
+        "B. 岸上的人看到水中的鱼——光的镜面反射",
+        "C. “海市蜃楼”——光的漫反射",
+        "D. 驾驶员看到后视镜中的景物——光的折射"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:fixed(pred=D, err=knowledge)",
+        "v1.1:open(pred=D, err=knowledge)",
+        "v1.2:fixed(pred=D, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 50,
+      "subject": "physics",
+      "question": "u＞2f，成倒立缩小的实像；u=2f，成倒立等大的实像；f＜u＜2f，成倒立放大的实像；u=f，不成像；u＜f，成正立放大的虚像。3. 对下列图象中的物理信息描述错误的是（ ）A. 物体的重力与质量成正比B. 该物质可能是水C. 该物体处于静止状态D. 黑龙江北部（最低温度－52.3℃）可以使用水银温度计",
+      "options": [
+        "A. 物体的重力与质量成正比",
+        "B. 该物质可能是水",
+        "C. 该物体处于静止状态",
+        "D. 黑龙江北部（最低温度－52.3℃）可以使用水银温度计"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "A",
+      "error_history": [
+        "v1.0:open(pred=C, err=knowledge)",
+        "v1.2:open(pred=A, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 51,
+      "subject": "physics",
+      "question": "一、单选题（本题共5小题，每小题2分，共10分。在每小题给出的四个选项中，只有一项是符合题意的）1. 深圳市是全国文明城市，公民应该控制噪声，下列不属于在声源处减弱噪声的做法是（　　）A. 不高声喧哗 B. 调低跳舞音响设备的音量C. 在公路上不鸣笛 D. 在学校周围植树",
+      "options": [
+        "A. 不高声喧哗",
+        "B. 调低跳舞音响设备的音量",
+        "C. 在公路上不鸣笛",
+        "D. 在学校周围植树"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=C, err=knowledge)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 54,
+      "subject": "physics",
+      "question": "20. “测量橙汁的密度”实验①为了测量结果更准确，下列实验步骤的合理顺序是________（用字母表示）A．计算橙汁的密度B．用天平测出空烧杯的质量C．烧杯中盛适量的橙汁，用天平测出橙汁和烧杯的总质量D．调节天平平衡E．将烧杯中的橙汁全部倒入量筒中，读出橙汁的体积②测量橙汁和烧杯总质量时，砝码和游码的位置如图甲所示，则总质量为________g。③不用量筒，只需添加一个完全相同的烧杯和适量的水，也可以完成该实验。实验步骤如下：a．用已调好的天平测出空烧杯的质量，记为m 0 ；b．向一个烧杯倒入适量橙汁，用天平测出橙汁和烧杯的总质量，记为m 1 ；c．向另一个烧杯中倒入与橙汁等深度的水（如图乙），用天平测出水和烧杯的总质量，记为m 2 ；d．橙汁的密度ρ 橙汁 =________（水的密度用ρ 水 表示）",
+      "options": [
+        "A. 计算橙汁的密度",
+        "B. 用天平测出空烧杯的质量",
+        "C. 烧杯中盛适量的橙汁，用天平测出橙汁和烧杯的总质量",
+        "D. 调节天平平衡E．将烧杯中的橙汁全部倒入量筒中，读出橙汁的体积②测量橙汁和烧杯总质量时，砝码和游码的位置如图甲所示，则总质量为________g。③不用量筒，只需添加一个完全相同的烧杯和适量的水，也可以完成该实验。实验步骤如下：a．用已调好的天平测出空烧杯的质量，记为m 0 ；b．向一个烧杯倒入适量橙汁，用天平测出橙汁和烧杯的总质量，记为m 1 ；c．向另一个烧杯中倒入与橙汁等深度的水（如图乙），用天平测出水和烧杯的总质量，记为m 2 ；d．橙汁的密度ρ 橙汁 =________（水的密度用ρ 水 表示）"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "hallucination",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=hallucination)",
+        "v1.1:open(pred=?, err=hallucination)",
+        "v1.2:fixed(pred=?, err=hallucination)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 55,
+      "subject": "physics",
+      "question": "6. 下列物理量估算不合理的是（ ）A. 一个中学生的重力约500NB. 人步行速度约10m/sC. 人体的正常体温约37℃D. 人体平均密度约1g/cm 3",
+      "options": [
+        "A. 一个中学生的重力约500N",
+        "B. 人步行速度约10m/s",
+        "C. 人体的正常体温约37℃",
+        "D. 人体平均密度约1g/cm 3"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:open(pred=D, err=knowledge)",
+        "v1.1:open(pred=D, err=knowledge)",
+        "v1.2:open(pred=D, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 57,
+      "subject": "physics",
+      "question": "13. 关于安全用电知识，下列说法正确的是（ ）A. 可以用湿抹布擦插座B. 发现有人触电，应立即用手将人拉开C. 三孔插座接地线要保证良好接地D. 使用试电笔时，不能用手接触到笔尾金属体",
+      "options": [
+        "A. 可以用湿抹布擦插座",
+        "B. 发现有人触电，应立即用手将人拉开",
+        "C. 三孔插座接地线要保证良好接地",
+        "D. 使用试电笔时，不能用手接触到笔尾金属体"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:fixed(pred=D, err=knowledge)",
+        "v1.1:open(pred=D, err=knowledge)",
+        "v1.2:fixed(pred=D, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 58,
+      "subject": "physics",
+      "question": "故选C。二、双项选题（本题共5小题，每小题2分，共10分。在每小题给出的四个选项中，有二个选项是符合题意的，漏选的得1分，错选或多选不得分）6. 下列说法正确的是（　　）A. 未来理想能源必须安全、清洁，不能严重影响环境B. 使用过的核废料不会造成污染可以简单填埋C. 电视、广播、手机都是用电磁波来传递信息的D. 二极管是半导体，具有双向导电性",
+      "options": [
+        "A. 未来理想能源必须安全、清洁，不能严重影响环境",
+        "B. 使用过的核废料不会造成污染可以简单填埋",
+        "C. 电视、广播、手机都是用电磁波来传递信息的",
+        "D. 二极管是半导体，具有双向导电性"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 59,
+      "subject": "physics",
+      "question": "10. 下图为“测滑轮组机械效率”的实验．在弹簧测力计拉力作用下，重6N的物体2s内匀速上升0.1m，弹簧测力计示数如图示（不计绳重与摩擦）．下列说法错误的是（ ）A. 弹簧测力计的拉力是2.4NB. 物体上升的速度为0.05m/sC. 弹簧测力计拉力的功率为0.12WD. 滑轮组的机械效率约83.3％",
+      "options": [
+        "A. 弹簧测力计的拉力是2.4N",
+        "B. 物体上升的速度为0.05m/s",
+        "C. 弹簧测力计拉力的功率为0.12W",
+        "D. 滑轮组的机械效率约83.3％"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:open(pred=D, err=knowledge)",
+        "v1.1:open(pred=D, err=knowledge)",
+        "v1.2:open(pred=D, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 60,
+      "subject": "physics",
+      "question": "主题一：物理与传统文化1. 2024年6月 10日是我国传统节日端午节，端午节划龙舟是传统的习俗，弘扬中国传统文化是我们义不容辞的责任。思考乐月月同学踊跃参加了划龙舟比赛，比赛中，思考乐月月同学判断龙舟尾部的旗杆是静止的，所选的参照物是（　　） A. 龙头 B. 船桨 C. 河岸 D. 鼓槌",
+      "options": [
+        "A. 龙头",
+        "B. 船桨",
+        "C. 河岸",
+        "D. 鼓槌"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:open(pred=C, err=knowledge)",
+        "v1.1:open(pred=C, err=knowledge)",
+        "v1.2:open(pred=C, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 61,
+      "subject": "physics",
+      "question": "7. 对于上升的热气球，下列说法正确的是（ ）A. 热气球的升空原理和民航飞机的起飞原理相同B. 热气球匀速上升时，机械能一定不变C. 热气球上升过程中，受到的大气压强不变D. 热气球燃料减少后，它的惯性变小",
+      "options": [
+        "A. 热气球的升空原理和民航飞机的起飞原理相同",
+        "B. 热气球匀速上升时，机械能一定不变",
+        "C. 热气球上升过程中，受到的大气压强不变",
+        "D. 热气球燃料减少后，它的惯性变小"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "A",
+      "error_history": [
+        "v1.0:open(pred=C, err=knowledge)",
+        "v1.2:open(pred=A, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 62,
+      "subject": "physics",
+      "question": "（2）[2]如图乙所示，小石头质量为砝码质量加上游码示数，标尺上每一小格代表0.2g，故石块质量为 [3]石块体积为故石头密度为（3）[4]砝码磨损，则测量的质量比实际质量更大，根据可知，体积不变时，所测密度偏大。（4）[5]石头浸没在水中所受浮力为根据阿基米德原理可知，石头的体积为石头质量为则石头密度为16. 小明需要测量小灯泡的额定功率，灯泡铭牌是“3.8V，1.15W”。 （1）小明连接电路后，发现灯泡不亮，下列哪种方法可以一次性解析多项问题（ ）A.检查电源 B.检查导线连接C.检查电流表和电压表的示数 D.调节滑动变阻器观察灯泡亮度（2）实验过程中，小明发现小灯泡较暗，如果要让小灯泡正常发光，他应将滑动变阻器向___________（左或右）滑动；（3）如图乙所示，当电压表示数为4.5V时，电流表示数为___________A；（4）从上表可以求出，当灯泡正常发光时电阻为___________Ω；（5）通过计算，判断出这只小灯泡铭牌上的参数___________（合格，不合格）；在这个实验中，可能会观察到小灯泡出现的现象是___________（一点即可）",
+      "options": [
+        "A. 检查电源",
+        "B. 检查导线连接",
+        "C. 检查电流表和电压表的示数"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 64,
+      "subject": "physics",
+      "question": "主题一物理与农业生产民为国垒，谷为民命，粮食事关国运民生。粮食安全是国家安全的重要基础。如图是两台收割机正在收割小麦的场景。完成1～4题。 1. 德顺同学和紫琦同学分别驾驶甲、乙收割机以同一速度同一方向运动，判断甲收割机里面的德顺同学静止所选的参照物是（　　）A. 车前小麦 B. 地面C. 远处的树 D. 乙收割机的紫琦同学",
+      "options": [
+        "A. 车前小麦",
+        "B. 地面",
+        "C. 远处的树",
+        "D. 乙收割机的紫琦同学"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 67,
+      "subject": "history",
+      "question": "21. 下图是第二次世界大战某个阶段的形势图。下列选项能作为此图标题的是（ ） A. 德意法西斯的进攻 B. 世界反法西斯联盟建立C. 盟军欧洲战场反攻 D. 欧洲战争策源地形成",
+      "options": [
+        "A. 德意法西斯的进攻",
+        "B. 世界反法西斯联盟建立",
+        "C. 盟军欧洲战场反攻",
+        "D. 欧洲战争策源地形成"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=A, err=knowledge)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 68,
+      "subject": "history",
+      "question": "20. 有学者认为“在19世纪的第一个四分之一时间里，玻利瓦尔就是美洲。”该学者观点的依据是，玻利瓦尔（ ）A. 领导了美洲独立运动 B. 收回了巴拿马运河的主权C. 发起了非暴力不合作运动 D. 颁布了《解放黑人奴隶宣言》",
+      "options": [
+        "A. 领导了美洲独立运动",
+        "B. 收回了巴拿马运河的主权",
+        "C. 发起了非暴力不合作运动",
+        "D. 颁布了《解放黑人奴隶宣言》"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 70,
+      "subject": "history",
+      "question": "14. 1600年，荷兰海军上将让.内克率领船队到珠江三角洲进行考察。他派20人与岸上的葡萄牙人进行谈判，葡萄牙人全力阻止这些人与中国官员进行会晤，并处决了这20人。材料说明葡萄牙人意图（ ）A 垄断中国贸易 B. 激化殖民矛盾 C. 维护中国海权 D. 扩大三角贸易",
+      "options": [
+        "A. 垄断中国贸易",
+        "B. 激化殖民矛盾",
+        "C. 维护中国海权",
+        "D. 扩大三角贸易"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:fixed(pred=C, err=knowledge)",
+        "v1.1:open(pred=C, err=knowledge)",
+        "v1.2:fixed(pred=C, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 71,
+      "subject": "history",
+      "question": "8. 公主赵姬因战乱流落到今天的深圳一带并结婚生子，到南宋光宗时期才追认为皇姑，并追封为郡主。这个故事发生的背景是（ ）A. 金灭北宋 B. 蒙古灭金 C. 元朝建立 D. 元灭南宋",
+      "options": [
+        "A. 金灭北宋",
+        "B. 蒙古灭金",
+        "C. 元朝建立",
+        "D. 元灭南宋"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "logic",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:open(pred=C, err=logic)",
+        "v1.1:open(pred=C, err=logic)",
+        "v1.2:fixed(pred=C, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 73,
+      "subject": "history",
+      "question": "13. 哈拉帕遗址的年代经碳素测定，结果误差较大，后来在两河流域出土的印度器具为印度古文明提供了较为精确的时间坐标。这说明了（ ）A. 两河流域文明比较先进 B. 古代亚非之间存在联系C. 世界文明呈现多元特色 D. 实物史料见证文明交流",
+      "options": [
+        "A. 两河流域文明比较先进",
+        "B. 古代亚非之间存在联系",
+        "C. 世界文明呈现多元特色",
+        "D. 实物史料见证文明交流"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:open(pred=B, err=knowledge)",
+        "v1.1:open(pred=B, err=knowledge)",
+        "v1.2:fixed(pred=B, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 74,
+      "subject": "history",
+      "question": "20. 1868年，一批新领导人在日本开始了革命性的变革，并最终把日本提高到一个具有国际威望的大国地位，这个改革（ ） A. 仿效唐朝典章制度 B. 开启了幕府统治C. 推行锁国政策 D. 发展了资本主义",
+      "options": [
+        "A. 仿效唐朝典章制度",
+        "B. 开启了幕府统治",
+        "C. 推行锁国政策",
+        "D. 发展了资本主义"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 78,
+      "subject": "history",
+      "question": "6. 宋太宗即位之初，广开科举，殿试特以训兵练将为题，考察和选拔士人。这反映了北宋政府（ ）A. 注重文臣军事素养 B. 强化儒家思想教育 C. 提升武将文化水平 D. 削弱地方割据势力",
+      "options": [
+        "A. 注重文臣军事素养",
+        "B. 强化儒家思想教育",
+        "C. 提升武将文化水平",
+        "D. 削弱地方割据势力"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 79,
+      "subject": "history",
+      "question": "11. 1933年中华苏维埃共和国临时中央政府在机关报《红色中华》上开辟“红板”专栏，表彰革命精神模范上表说明（ ）A. 体现共产党注重价值引领 B. 扩大农村革命根据地范围C. 表达共产党对知识分子的尊重 D. 有利于赢得北伐战争的最终胜利",
+      "options": [
+        "A. 体现共产党注重价值引领",
+        "B. 扩大农村革命根据地范围",
+        "C. 表达共产党对知识分子的尊重",
+        "D. 有利于赢得北伐战争的最终胜利"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 80,
+      "subject": "history",
+      "question": "7. 北宋时期，政府乐于见到人们的鉴赏喜好从贵金属转向陶瓷，这一转变有利于金属货币的流通，并向少数民族政权换取和平。可见政府支持这一转变的主要意图是（ ）A. 引导贵族生活方式的转变 B. 推动文化教育事业的发展C. 提倡节俭以保持士人清廉 D. 促进经济发展和支付岁币",
+      "options": [
+        "A. 引导贵族生活方式的转变",
+        "B. 推动文化教育事业的发展",
+        "C. 提倡节俭以保持士人清廉",
+        "D. 促进经济发展和支付岁币"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 83,
+      "subject": "history",
+      "question": "10. 19世纪80年代，《点石斋画报》记载了北京的风俗，比如《超度孤魂》等。20年之后却受到了批判，《北京画报》里记载“七月十五是鬼节，烧法船……这种有碍风化的事情，警厅应当管一管”。这一变化说明（ ）A. 时人崇洋媚外 B. 地区发展有差异C. 不记得了 D. 科学思想的传播",
+      "options": [
+        "A. 时人崇洋媚外",
+        "B. 地区发展有差异",
+        "C. 不记得了",
+        "D. 科学思想的传播"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 84,
+      "subject": "history",
+      "question": "23. 2022年北京冬奥会开幕式中，表演者的舞台采用光影投屏技术，形成巨大冰面视效，每一秒地屏画面都会随节目的调整而变化，或空灵或浪漫，呈现出独特美学。2008年奥运会开幕式也曾计划采用这种方式，但技术尚不成熟。如今技术成熟得益于（ ）A. 信息技术的进步 B. 电影拍摄技术的提高C. 空间技术的发展 D. 快速制冰技术的出现",
+      "options": [
+        "A. 信息技术的进步",
+        "B. 电影拍摄技术的提高",
+        "C. 空间技术的发展",
+        "D. 快速制冰技术的出现"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 87,
+      "subject": "history",
+      "question": "5. 有学者探究了中国古代部分王朝选择都城的主要原因结合所学知识，可将表格补充完整的一项是（ ）A. 发迹之地 B. 军事需要 C. 宗教信仰 D. 推行改革",
+      "options": [
+        "A. 发迹之地",
+        "B. 军事需要",
+        "C. 宗教信仰",
+        "D. 推行改革"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:fixed(pred=C, err=logic)",
+        "v1.1:open(pred=C, err=logic)",
+        "v1.2:fixed(pred=C, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 88,
+      "subject": "history",
+      "question": "16. 1969年同中国建交的西方资本主义国家只有法国等六个国家。1973年时，中国与除美国以外的其他西方资本主义发达国家基本建交，同欧盟也建立了正式关系。这种情况的变化反映了（ ）A. 社会主义制度的确立 B. 中美关系的缓和C. 资本主义阵营的分化 D. 改革开放的需要",
+      "options": [
+        "A. 社会主义制度的确立",
+        "B. 中美关系的缓和",
+        "C. 资本主义阵营的分化",
+        "D. 改革开放的需要"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 89,
+      "subject": "history",
+      "question": "19. “这个重要的文件，最大程度地保证了议会的立法权，从财政和军队招募两方面保证对国王的监督权。”这个重要的文件是（ ）A. 《权利法案》 B. 《独立宣言》C. 《人权宣言》 D. 1787年宪法",
+      "options": [
+        "A. 《权利法案》",
+        "B. 《独立宣言》",
+        "C. 《人权宣言》",
+        "D. 1787年宪法"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 90,
+      "subject": "history",
+      "question": "9. 下表整理了徐光启推广农作物和整理农书的材料（ ）A. 学习西方科学技术 B. 得到政府的支持C. 注重搜集文献资料 D. 具有实践探索精神",
+      "options": [
+        "A. 学习西方科学技术",
+        "B. 得到政府的支持",
+        "C. 注重搜集文献资料",
+        "D. 具有实践探索精神"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 92,
+      "subject": "history",
+      "question": "18. 文艺复兴时期的文艺作品具有丰富的色彩，如红、绿、蓝分别象征了爱情、希望、天空和海洋，扫除了中世纪的灰暗。作品鲜明的色彩反映了（ ）A. 古罗马文化的复兴 B. 宗教信仰的改变C. 东方文化的影响 D. 精神面貌的变化",
+      "options": [
+        "A. 古罗马文化的复兴",
+        "B. 宗教信仰的改变",
+        "C. 东方文化的影响",
+        "D. 精神面貌的变化"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 96,
+      "subject": "english",
+      "question": "【解析】表达分数时：分子用基数词，分母要用序数词。分子超过1以上的任何数时，分母需加复数形式。如：3∕4：three quarters 或者three fourths.根据答句的意思，果汁是不可数名词，故后面要用单数的谓语动词。 故选择D.11. — It sounds ________ that a truck hit two cars.— Luckily, _______of three drivers was hurt.A. terribly; none B. terrible; none C. terrible; neither D. terribly; neither",
+      "options": [
+        "D. 11. — It sounds ________ that a truck hit two cars.— Luckily, _______of three drivers was hurt",
+        "A. terribly; none",
+        "B. terrible; none",
+        "C. terrible; neither",
+        "D. terribly; neither"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 97,
+      "subject": "english",
+      "question": "7．（2020·深圳）—What do you think of the Hi—tech Fair in Shenzhen Bay?—You can't miss it! The show room is full of different models.A．is fled with B．is made of C．is covered with",
+      "options": [
+        "A. is fled with",
+        "B. is made of",
+        "C. is covered with"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "not_tested",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.2",
+      "fixed_in": null,
+      "latest_error_type": "format",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.2:open(pred=C, err=format)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": true
+    },
+    {
+      "id": 98,
+      "subject": "english",
+      "question": "【解析】any构成的复合不定代词，用在否定句中或者疑问句中；something用在肯定句子中，当在疑问句中的意思表示委婉的请求或提建议时，以及希望说话对方做出肯定回答的时候，也可以用到something。第二，基数词与单数名词用连字符构成符合形容词，作名词的定语，用于表示时间，距离等。如： A 100-meter race a ten-minute walk 故选择A.13. — It's said a pianist will perform at Poly Theater on Friday evening. Is it Lang Lang?— Yes, it _______ him. He _______ for a week.A. must be; has arrived here B. maybe; has been hereC. must be; has been here D. maybe; has arrived here",
+      "options": [
+        "A. 100-meter race a ten-minute walk 故选择",
+        "A. 13. — It's said a pianist will perform at Poly Theater on Friday evening. Is it Lang Lang?— Yes, it _______ him. He _______ for a week",
+        "A. must be; has arrived here",
+        "B. maybe; has been here",
+        "C. must be; has been here",
+        "D. maybe; has arrived here"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 99,
+      "subject": "english",
+      "question": "【解析】Would you like to do sth. 意思是：你想要做什么？第二，答句是一个If引导的一般将来时，此时是，主句要用将来时，从句要用一般现在时。my mother 属于第三人称单数做主语，后面的谓语动词要用单数形式。故选择C.16. — _______ do you think of the football match?— It's perfect. It's more exciting than _______ match that I have ever watched.A. How ; any other B. How ; any othersC. What ; any other D. What ; any others",
+      "options": [
+        "C. 16. — _______ do you think of the football match?— It's perfect. It's more exciting than _______ match that I have ever watched",
+        "A. How ; any other",
+        "B. How ; any others",
+        "C. What ; any other",
+        "D. What ; any others"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 100,
+      "subject": "english",
+      "question": "11．（2020·深圳）—Whenever I nod to Jenny, she _____ my greeting with a big smile.— She is always so cheerful.A．replies to B．points to C．laughs at",
+      "options": [
+        "A. replies to",
+        "B. points to",
+        "C. laughs at"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "not_tested"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "format",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:open(pred=C, err=format)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 101,
+      "subject": "english",
+      "question": "【解析】what+(a/an)+adj.+n.+主语+谓语+(it is). How+adj.（adv.）+主语+谓语+(it is). 翻译为:这个镇子好漂亮啊！是啊，它比我去年参观的那个小镇还要漂亮。第一个空处，我们把这句话还原，就是：The small town is beautiful.第二空处，the 一般是特指的，特指我去年参观的那个小镇 故选择A.7. — Who will teach _______ oral English next term? Can it be a new teacher?— Perhaps. But our head teacher hasn't told us ________ .A. your; already B. you; yet C. you; already D. your; yet",
+      "options": [
+        "A. your; already",
+        "B. you; yet",
+        "C. you; already",
+        "D. your; yet"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 104,
+      "subject": "english",
+      "question": "【解析】What do you think of+,,,? 你认为，，，什么怎么样？是一种固定的搭配。第二，主语+be +（more exciting ）+than any other+名词单数。故选择C.17. — What will you do _______ the summer holiday?— I think I shall watch London Olympic Games. It will _______ in August.A. during; be held B. at; holdC. during; hold D. at; be hold",
+      "options": [
+        "A. during; be held",
+        "B. at; hold",
+        "C. during; hold",
+        "D. at; be hold"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 105,
+      "subject": "english",
+      "question": "【解析】我们知道Let’s+动词原形，如：Let’s go to school. Prefer A to B (A,B都是名词) prefer doing A to doing B= would rather do A than do B=like doing A better than doing B. 故选择A.15. — Would you like _______ the Wutong Mountain tommorrow?— If my mother _______ . I will go with you.A. climbing; will allow B. climbing; allowsC. to climb; allows D. to climb; will allow",
+      "options": [
+        "A. to",
+        "A. better than doing",
+        "B. 故选择",
+        "A. 15. — Would you like _______ the Wutong Mountain tommorrow?— If my mother _______ . I will go with you",
+        "A. climbing; will allow",
+        "B. climbing; allows",
+        "C. to climb; allows",
+        "D. to climb; will allow"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "A",
+      "error_history": [
+        "v1.0:open(pred=A, err=logic)",
+        "v1.1:open(pred=A, err=logic)",
+        "v1.2:open(pred=A, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 106,
+      "subject": "english",
+      "question": "drive one mad 意思是\"让某人抓狂，\"made me drive crazily意思是\"让我疯狂的开车\"made me awake意思是|\"让我保持清醒\"made me crazy意思是\"让我发疯\"因此可知made me crazy的意思与drive one mad 的意思相近，故选C．7．（2分）﹣﹣﹣I went on a fantastic trip to Thailand last summer．﹣﹣﹣Wow!Thailand is a beautiful country．I hope I can go there someday．（　　）A．terrible B．wonderful C．frightening",
+      "options": [
+        "C. 7．（2分）﹣﹣﹣I went on a fantastic trip to Thailand last summer．﹣﹣﹣Wow!Thailand is a beautiful country．I hope I can go there someday．（　　）",
+        "A. terrible",
+        "B. wonderful",
+        "C. frightening"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "not_tested",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.2",
+      "fixed_in": null,
+      "latest_error_type": "format",
+      "latest_model_answer": "A",
+      "error_history": [
+        "v1.2:open(pred=A, err=format)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": true
+    },
+    {
+      "id": 109,
+      "subject": "english",
+      "question": "Dear Sam,How time flies! It’s time for us to say goodbye. Yours sincerely,Li Hua I. 选择填空。（15分）I.从下面每小题的A、B、C三个选项中选出可以替换划线部分的最佳选项。（共8小题，每小题1分，计8分）1. Ancient Greeks used a giant wooden horse to capture the city of Troy.A. huge B. wonderful C. wide",
+      "options": [
+        "A. huge",
+        "B. wonderful",
+        "C. wide"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 111,
+      "subject": "english",
+      "question": "【解析】1.若陈述句部分为祈使句，反意疑问句通常用will you , won’t, would you等：Mail the letter today, will you? 今天就把信发掉，好吗? Try to be back by two, won’t you? 设法两点之前回来，好吗? If you want help, let me know, would you? 如果你需要帮助，告诉我，好吗?【注】若陈述部分为否定式，则反意疑问句部分只用will you：Don’t forget to post the letter, will you? 请别忘了寄信。2.根据答句，后半句内容,我将准时到达那里。表肯定，故应该是Yes, I will. 故选择B.20. — Can you guess _______ ?— I've no idea about it.A. why was he late B. when shall we have the sports meetingC. where was she born D. how much he paid for the camera",
+      "options": [
+        "A. why was he late",
+        "B. when shall we have the sports meeting",
+        "C. where was she born",
+        "D. how much he paid for the camera"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:fixed(pred=C, err=logic)",
+        "v1.1:open(pred=C, err=logic)",
+        "v1.2:fixed(pred=C, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 112,
+      "subject": "english",
+      "question": "25. A.story    B．basketball    C.present    D．1ifeIII. 阅读理解（35分）i. 阅读下列短文，从下面每小题的A、B、C、D四个选项中选出最佳选项，在答题卡选择题答题区将相应的字母编号涂黑。（共25小题，每小题1分）A",
+      "options": [
+        "A. story",
+        "B. basketball",
+        "C. present",
+        "D. 1ifeIII. 阅读理解（35分）i. 阅读下列短文，从下面每小题的"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:fixed(pred=D, err=logic)",
+        "v1.1:open(pred=D, err=logic)",
+        "v1.2:open(pred=D, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 114,
+      "subject": "english",
+      "question": "【解析】系动词亦称联系动词（Link Verb），作为系动词，它本身有词义，但不能单独用作谓语，后边必须跟表语（亦称补语），构成系表结构说明主语的状况、性质、特征等情况。表语说明主语“是什么”或者“怎么样”，由名词、形容词、副词、介词、不定式及相当于名词或形容词或短语来担任。它的位置在系动词后面。如：I am a teacher.（名词） He is always happy.（形容词） They are on the playground now.（介词短语 ） It gets cold.（形容词） Be动词（am，is，are, was, were）系动词 表保持（keep, stay, remain） 表改变（get， become， turn） 感官动词（feel，sound（听起来），seem/look（看起来），taste（尝起来），smell（闻起来））根据答句：有三个司机，表示三者或者三者以上的代词，用none. 表示两者之间用neither. 故选择B.12. — Is there _______ in today's newspaper?— Yes, it's really cheerful to read that a group of _______ kids joined the volunteers!A. anything new; ten-year-old B. something new; ten-years-oldC. anything new; ten-years-old D. something new; ten-year-old",
+      "options": [
+        "B. 12. — Is there _______ in today's newspaper?— Yes, it's really cheerful to read that a group of _______ kids joined the volunteers!",
+        "A. anything new; ten-year-old",
+        "B. something new; ten-years-old",
+        "C. anything new; ten-years-old",
+        "D. something new; ten-year-old"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 115,
+      "subject": "english",
+      "question": "14. —Anne, the information you gave me is really . Thank you very much.—Not at all. I’m happy I can help you.A. useless B. ordinary C. valuable",
+      "options": [
+        "A. useless",
+        "B. ordinary",
+        "C. valuable"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "hallucination",
+      "latest_model_answer": "A",
+      "error_history": [
+        "v1.0:fixed(pred=A, err=hallucination)",
+        "v1.1:open(pred=A, err=hallucination)",
+        "v1.2:fixed(pred=A, err=hallucination)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 117,
+      "subject": "english",
+      "question": "14．（2分）﹣﹣﹣The dress looks so nice on you!It must be very expensive．Where did you buy it？﹣﹣﹣__________，it is only 100yuan．I bought it on Taobao．（　　）A．In fact B．In addition C．In need",
+      "options": [
+        "A. In fact",
+        "B. In addition",
+        "C. In need"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:fixed(pred=C, err=logic)",
+        "v1.1:open(pred=C, err=logic)",
+        "v1.2:open(pred=C, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 118,
+      "subject": "english",
+      "question": "10．（2020·深圳）—Cindy, I have bought a lot of fruits for you.—Wonderful! Let's put them into the fridge to keep them _____.A．clean B．fresh C．fit",
+      "options": [
+        "A. clean",
+        "B. fresh",
+        "C. fit"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 119,
+      "subject": "english",
+      "question": "一、 Ⅰ. 词汇（15分） ⅰ. 从下面每小题的 A、B、C三个选项中选出可以替换划线部分的最佳选项，并在答题卡上将相应的字母编号涂黑。（共8小题，每小题2分）1．（2分）﹣﹣﹣Dad，I'm considering going to Italy to study art this year．﹣﹣﹣ In my opinion ，studying abroad is not suitable for teenagers．（　　）A．I don't agree B．I thinkC．In general",
+      "options": [
+        "A. I don't agree",
+        "B. I think",
+        "C. In general"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "not_tested"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "format",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:open(pred=C, err=format)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 121,
+      "subject": "english",
+      "question": "3. —I have difficulty in learning Chinese. Could you give me some help?—Sure. Reading a lot will help you improve your Chinese.A. questions B. problems C. tasks",
+      "options": [
+        "A. questions",
+        "B. problems",
+        "C. tasks"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "A",
+      "error_history": [
+        "v1.0:open(pred=A, err=logic)",
+        "v1.1:open(pred=A, err=logic)",
+        "v1.2:open(pred=A, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 122,
+      "subject": "chinese",
+      "question": "【解析】考查病句类型。B 项重复累赘，应删去“约”或“左右”。C 项成分残缺，乱用介词使主语缺失，应删去“通过”或“使”。D 项否定不当，应删去“不得”或“必须禁止”。4．（2 分）请选出下列选项中排序正确的一项（ ）第 1 页（共 11 页） ①桥上呼应相接，岸边挥臂助阵，过往行人聚集在桥头围观。②桥的两端紧连着街市，车水马龙，热闹非凡。③汴河上有一座规模宏敞的拱桥，其桥无柱，以巨木虚架而成，结构精美，宛如飞虹。④而那些赶脚、推车、挑担的人们，却无暇一顾。⑤一艘准备驶过拱桥的巨大漕船的细节描绘，一直为人们所称道：船正在放倒桅杆准备过桥，船夫们呼唤叫喊，握篙盘索。A．⑤②③④① B．①⑤④③② C．④①②⑤③ D．③②⑤①④",
+      "options": [
+        "B. 项重复累赘，应删去“约”或“左右”。",
+        "C. 项成分残缺，乱用介词使主语缺失，应删去“通过”或“使”。",
+        "D. 项否定不当，应删去“不得”或“必须禁止”。4．（2 分）请选出下列选项中排序正确的一项（ ）第 1 页（共 11 页） ①桥上呼应相接，岸边挥臂助阵，过往行人聚集在桥头围观。②桥的两端紧连着街市，车水马龙，热闹非凡。③汴河上有一座规模宏敞的拱桥，其桥无柱，以巨木虚架而成，结构精美，宛如飞虹。④而那些赶脚、推车、挑担的人们，却无暇一顾。⑤一艘准备驶过拱桥的巨大漕船的细节描绘，一直为人们所称道：船正在放倒桅杆准备过桥，船夫们呼唤叫喊，握篙盘索。",
+        "A. ⑤②③④①",
+        "B. ①⑤④③②",
+        "C. ④①②⑤③",
+        "D. ③②⑤①④"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:fixed(pred=B, err=logic)",
+        "v1.1:open(pred=B, err=logic)",
+        "v1.2:fixed(pred=B, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 123,
+      "subject": "chinese",
+      "question": "【解析】考查成语运用。A 项“胸有成竹”比喻做事之前已作好充分准备，对事情的成功已有了十分的把握。B 项“大相径庭”指彼此相差极远或矛盾很大。C 项“袖手旁观”表示把手笼在袖子里，在一旁观看；比喻置身事外，既不过问，也不协助别人。D 项“可歌可泣”表示值得歌颂、赞美，使人感动流泪；形容英勇悲壮的感人事迹。3．（2 分）请选出下列句子中没有语病的一项（ ）A．在学习中，我们应该注意培养自己提出问题、分析问题、解决问题的能力。 B．港珠澳大桥的建设者，努力攻克技术难关，取得了约 500 项左右的专利成果。C．通过“主题教育”的学习，使我们认识到“不忘初心，牢记使命”的重要意义。D．为了保护我们的家园，必须禁止任何组织和个人不得侵占或破坏自然资源。",
+      "options": [
+        "A. 项“胸有成竹”比喻做事之前已作好充分准备，对事情的成功已有了十分的把握。",
+        "B. 项“大相径庭”指彼此相差极远或矛盾很大。",
+        "C. 项“袖手旁观”表示把手笼在袖子里，在一旁观看；比喻置身事外，既不过问，也不协助别人。",
+        "D. 项“可歌可泣”表示值得歌颂、赞美，使人感动流泪；形容英勇悲壮的感人事迹。3．（2 分）请选出下列句子中没有语病的一项（ ）",
+        "A. 在学习中，我们应该注意培养自己提出问题、分析问题、解决问题的能力。",
+        "B. 港珠澳大桥的建设者，努力攻克技术难关，取得了约 500 项左右的专利成果。",
+        "C. 通过“主题教育”的学习，使我们认识到“不忘初心，牢记使命”的重要意义。",
+        "D. 为了保护我们的家园，必须禁止任何组织和个人不得侵占或破坏自然资源。"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 124,
+      "subject": "chinese",
+      "question": "下列词语中，没有错别字的一项是（ ）A. 迫不及待 B. 走头无路 C. 一诺千斤 D. 谈笑风声",
+      "options": [
+        "A. 迫不及待",
+        "B. 走头无路",
+        "C. 一诺千斤",
+        "D. 谈笑风声"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:open(pred=D, err=knowledge)",
+        "v1.1:open(pred=D, err=knowledge)",
+        "v1.2:open(pred=D, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 125,
+      "subject": "chinese",
+      "question": "下列句子中，加点成语使用正确的一项是（ ）A. 他平时学习不认真，考试时却胸有成竹 B. 这两篇文章虽然题材相同，但风格大相径庭 C. 看到有人落水，他袖手旁观 D. 他在演讲比赛中夸夸其谈，获得了一等奖",
+      "options": [
+        "A. 他平时学习不认真，考试时却胸有成竹",
+        "B. 这两篇文章虽然题材相同，但风格大相径庭",
+        "C. 看到有人落水，他袖手旁观",
+        "D. 他在演讲比赛中夸夸其谈，获得了一等奖"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "not_tested"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:open(pred=C, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 126,
+      "subject": "chinese",
+      "question": "下列句子中没有语病的一项是（ ）A. 通过这次活动，使我们开阔了眼界 B. 深圳的夏天是一个美丽的城市 C. 能否刻苦学习是取得好成绩的关键 D. 我们要养成认真检查作业的习惯",
+      "options": [
+        "A. 通过这次活动，使我们开阔了眼界",
+        "B. 深圳的夏天是一个美丽的城市",
+        "C. 能否刻苦学习是取得好成绩的关键",
+        "D. 我们要养成认真检查作业的习惯"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 127,
+      "subject": "chinese",
+      "question": "下列句子排序最恰当的一项是：①所以，古人通过观测天象来判断季节②二十四节气是我国古代劳动人民智慧的结晶③这是中国古代订立的一种用来指导农事的补充历法④它反映了季节的变化，指导农事活动 A. ②④①③ B. ②③④① C. ①③②④ D. ④①②③",
+      "options": [
+        "A. ②④①③",
+        "B. ②③④①",
+        "C. ①③②④",
+        "D. ④①②③"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 128,
+      "subject": "chinese",
+      "question": "下列关于文学常识的表述，不正确的一项是（ ）A. 《诗经》是我国最早的一部诗歌总集 B. 《史记》是西汉司马迁所著 C. 《战国策》的作者是西汉刘向 D. 李白被称为'诗圣'",
+      "options": [
+        "A. 《诗经》是我国最早的一部诗歌总集",
+        "B. 《史记》是西汉司马迁所著",
+        "C. 《战国策》的作者是西汉刘向",
+        "D. 李白被称为'诗圣'"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:fixed(pred=B, err=knowledge)",
+        "v1.1:open(pred=B, err=knowledge)",
+        "v1.2:fixed(pred=B, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 129,
+      "subject": "chinese",
+      "question": "下列句子中，修辞手法判断正确的一项是（ ）A. 月亮像一个大圆盘挂在天上——拟人 B. 鸟儿在枝头唱着欢快的歌——比喻 C. 飞流直下三千尺，疑是银河落九天——夸张 D. 教室里静得连一根针掉在地上都听得见——排比",
+      "options": [
+        "A. 月亮像一个大圆盘挂在天上——拟人",
+        "B. 鸟儿在枝头唱着欢快的歌——比喻",
+        "C. 飞流直下三千尺，疑是银河落九天——夸张",
+        "D. 教室里静得连一根针掉在地上都听得见——排比"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "A",
+      "error_history": [
+        "v1.0:fixed(pred=A, err=knowledge)",
+        "v1.1:open(pred=A, err=knowledge)",
+        "v1.2:fixed(pred=A, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 130,
+      "subject": "chinese",
+      "question": "下列对文章的理解和分析，不正确的一项是（ ）A. 议论文的三要素是论点、论据、论证 B. 说明文的语言要求准确、严谨 C. 小说的情节一般包括开端、发展、高潮、结局 D. 散文必须要有完整的故事线索",
+      "options": [
+        "A. 议论文的三要素是论点、论据、论证",
+        "B. 说明文的语言要求准确、严谨",
+        "C. 小说的情节一般包括开端、发展、高潮、结局",
+        "D. 散文必须要有完整的故事线索"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "A",
+      "error_history": [
+        "v1.0:open(pred=C, err=knowledge)",
+        "v1.2:open(pred=A, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 132,
+      "subject": "chinese",
+      "question": "下列关于名著阅读的表述，不正确的一项是（ ）A. 《西游记》中孙悟空大闹天宫体现反抗精神 B. 《水浒传》中宋江被称为'及时雨' C. 《骆驼祥子》的作者是老舍 D. 《红星照耀中国》是虚构小说",
+      "options": [
+        "A. 《西游记》中孙悟空大闹天宫体现反抗精神",
+        "B. 《水浒传》中宋江被称为'及时雨'",
+        "C. 《骆驼祥子》的作者是老舍",
+        "D. 《红星照耀中国》是虚构小说"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:fixed(pred=B, err=knowledge)",
+        "v1.1:open(pred=B, err=knowledge)",
+        "v1.2:fixed(pred=B, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 134,
+      "subject": "chemistry",
+      "question": "本卷可能用到相对原子质量：H-1 Zn-65 Cl-35.5 Fe-56 O-16 C-12 Mg-24 Cu-64 S-32一、选择题(共10小题，每小题1.5分，共15分。在每小题给出的四个选项中，只有一项是符合题目要求的)1. “美丽中国我先行”，思考乐律培和海波同学认为下列不符合该主题的是A. 在餐厅使用一次性餐具 B. 使用新能源汽车C. 生活中垃圾分类 D. 污水处理达标后排放",
+      "options": [
+        "A. 在餐厅使用一次性餐具",
+        "B. 使用新能源汽车",
+        "C. 生活中垃圾分类",
+        "D. 污水处理达标后排放"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "not_tested",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.2",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.2:open(pred=D, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": true
+    },
+    {
+      "id": 136,
+      "subject": "chemistry",
+      "question": "下列物质中，属于纯净物的是（ ）A. 空气 B. 海水 C. 蒸馏水 D. 石灰水",
+      "options": [
+        "A. 空气",
+        "B. 海水",
+        "C. 蒸馏水",
+        "D. 石灰水"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "A",
+      "error_history": [
+        "v1.0:open(pred=A, err=logic)",
+        "v1.1:open(pred=A, err=logic)",
+        "v1.2:open(pred=A, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 138,
+      "subject": "chemistry",
+      "question": "下列物质在氧气中燃烧，产生大量白烟的是（ ）A. 木炭 B. 铁丝 C. 红磷 D. 硫粉",
+      "options": [
+        "A. 木炭",
+        "B. 铁丝",
+        "C. 红磷",
+        "D. 硫粉"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 139,
+      "subject": "chemistry",
+      "question": "下列金属中，活动性最强的是（ ）A. 铁 B. 铜 C. 锌 D. 银",
+      "options": [
+        "A. 铁",
+        "B. 铜",
+        "C. 锌",
+        "D. 银"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 140,
+      "subject": "chemistry",
+      "question": "下列物质溶于水，溶液温度降低的是（ ）A. 浓硫酸 B. 氢氧化钠 C. 氯化钠 D. 硝酸铵",
+      "options": [
+        "A. 浓硫酸",
+        "B. 氢氧化钠",
+        "C. 氯化钠",
+        "D. 硝酸铵"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 141,
+      "subject": "chemistry",
+      "question": "下列实验操作正确的是（ ）A. 用嘴吹灭酒精灯 B. 用手直接取用固体药品 C. 稀释浓硫酸时将水倒入浓硫酸 D. 读取量筒读数时视线与凹液面最低处相平",
+      "options": [
+        "A. 用嘴吹灭酒精灯",
+        "B. 用手直接取用固体药品",
+        "C. 稀释浓硫酸时将水倒入浓硫酸",
+        "D. 读取量筒读数时视线与凹液面最低处相平"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "not_tested"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:open(pred=C, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 144,
+      "subject": "chemistry",
+      "question": "下列物质中，pH小于7的是（ ）A. 食盐水 B. 石灰水 C. 食醋 D. 纯碱溶液",
+      "options": [
+        "A. 食盐水",
+        "B. 石灰水",
+        "C. 食醋",
+        "D. 纯碱溶液"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:open(pred=B, err=logic)",
+        "v1.1:open(pred=B, err=logic)",
+        "v1.2:open(pred=B, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 145,
+      "subject": "chemistry",
+      "question": "化学反应前后，一定不变的是（ ）A. 分子种类 B. 分子数目 C. 原子种类 D. 物质种类",
+      "options": [
+        "A. 分子种类",
+        "B. 分子数目",
+        "C. 原子种类",
+        "D. 物质种类"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "A",
+      "error_history": [
+        "v1.0:open(pred=A, err=knowledge)",
+        "v1.2:open(pred=A, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 148,
+      "subject": "chemistry",
+      "question": "下列金属中，不能与稀盐酸反应生成氢气的是（ ）A. 镁 B. 锌 C. 铁 D. 铜",
+      "options": [
+        "A. 镁",
+        "B. 锌",
+        "C. 铁",
+        "D. 铜"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 149,
+      "subject": "chemistry",
+      "question": "过滤操作中，不需要用到的仪器是（ ）A. 烧杯 B. 漏斗 C. 玻璃棒 D. 酒精灯",
+      "options": [
+        "A. 烧杯",
+        "B. 漏斗",
+        "C. 玻璃棒",
+        "D. 酒精灯"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "A",
+      "error_history": [
+        "v1.0:fixed(pred=A, err=logic)",
+        "v1.1:open(pred=A, err=logic)",
+        "v1.2:fixed(pred=A, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 151,
+      "subject": "politics",
+      "question": "B：中学生不慎剐蹭私家车，主动留下道歉信，这是一种诚信的行为。车主的回应，也体现了诚实守信能够促进社会和谐，故B正确；ACD：题干未涉及乐于助人、尊重他人、遵纪守法，故排除ACD；故本题选B。6. 2022年获评全国五好家庭的莫益娟夫妇，13年如一日先后照顾了30个社会孤残儿童，用爱心、耐心、责任心陪伴这些孩子，让他们感受到家的温暖。由此可见，此夫妇（ ）A. 热心公益，赢得他人荣誉赞许B. 见义勇为，不计个人利益得失C. 孝亲敬长，履行公民法定义务D 关爱他人，传递了社会正能量",
+      "options": [
+        "A. 热心公益，赢得他人荣誉赞许",
+        "B. 见义勇为，不计个人利益得失",
+        "C. 孝亲敬长，履行公民法定义务",
+        "D. 关爱他人，传递了社会正能量"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:open(pred=C, err=logic)",
+        "v1.1:open(pred=C, err=logic)",
+        "v1.2:open(pred=C, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 152,
+      "subject": "politics",
+      "question": "②③：依据题文描述，广大学生积极提出建议，这有利于增强公民参与意识，有利于促进科学民主决策，故②③说法正确；①：这与题意无关，故排除；④：材料没有体现出民主选举内容，故④说法错误； 故本题选B。12. 荣获第26届“中国青年五四奖章集体”的“天鲲号”团队成员平均年龄只有32岁，他们精诚合作，常常需要克服极端恶劣天气，连续高强度作业，一次性完成海上吹沙填海造岛任务，用青春和热血征服汹涌巨浪。他们的行动（ ）①体现了团结一心，敬业创优的精神②展现了不怕困难，扶危济困的品质③体现了迎难而上追求卓越的青年担当④展示了锐意进取改革创新的时代精神A. ①② B. ①④ C. ②③ D. ②④",
+      "options": [
+        "A. ①②",
+        "B. ①④",
+        "C. ②③",
+        "D. ②④"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:open(pred=C, err=logic)",
+        "v1.1:open(pred=C, err=logic)",
+        "v1.2:open(pred=C, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 153,
+      "subject": "politics",
+      "question": "①②：漫画中，现在生病有医保，现在读的是大学。这体现了国家高度重视民生问题。人民幸福的生活是最大的人权，公民享有广泛政治权利和自由，故①②正确；③④：选项说法不符合题意，故排除③④；故本题选A。8. 一商家因疫情期间哄抬物价，扰乱市场秩序，受到严厉处罚，这说明（ ）A. 权利义务相统一，违反法律须担责B. 行使权利有界限，扰乱市场是犯罪C. 法无授权不可为，执法权力要用好D. 社会生活有规律，遵守规则靠他律",
+      "options": [
+        "A. 权利义务相统一，违反法律须担责",
+        "B. 行使权利有界限，扰乱市场是犯罪",
+        "C. 法无授权不可为，执法权力要用好",
+        "D. 社会生活有规律，遵守规则靠他律"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 154,
+      "subject": "politics",
+      "question": "①：维护国家粮食安全是公民的义务，①说法错误；③：经济安全是国家安全观的基础，③说法错误；②④：米粒虽小，尤见礼义廉耻 ，这说明了节约粮食是中华民族的传统美德；节俭事微，可助兴国安邦，这说明了维护粮食安全有利于维护国家安全，故②④说法正确；故本题选C。10. 下列三幅漫画所反映的诉讼类型从左到右依次是（ ） A. 民事诉讼、行政诉讼、刑事诉讼B. 刑事诉讼、行政诉讼、民事诉讼C. 刑事诉讼、民事诉讼、民事诉讼D. 民事诉讼、民事诉讼、刑事诉讼",
+      "options": [
+        "A. 民事诉讼、行政诉讼、刑事诉讼",
+        "B. 刑事诉讼、行政诉讼、民事诉讼",
+        "C. 刑事诉讼、民事诉讼、民事诉讼",
+        "D. 民事诉讼、民事诉讼、刑事诉讼"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 155,
+      "subject": "politics",
+      "question": "①④：题文中“天鲲号”团队精诚合作，克服困难完成任务，他们的行动体现了团结一心，敬业创优的精神；展示了锐意进取改革创新的时代精神，故①④说法正确；②③：扶危济困、追求卓越在题文中没有体现，故排除②③；故本题选B。13. 2016年以来，深圳通过资金支持。人才支援，产业合作等形式，全方位帮扶广西壮族自治区百色市地区，帮扶百色市7.18万人口脱贫，由此可见，深圳对口帮扶发挥作用路径正确的是（ ）①多措并举帮助百色地区；②助力百色地区人口脱贫；③实现百色地区民族平等；④促进百色地区经济社会发展A. ①——③——② B. ①——②——④C. ①——④——③ D. ①——④——②",
+      "options": [
+        "A. ①——③——②",
+        "B. ①——②——④",
+        "C. ①——④——③",
+        "D. ①——④——②"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 158,
+      "subject": "politics",
+      "question": "A：一商家因疫情期间哄抬物价，扰乱市场秩序，受到严厉处罚，这说明公民的权利与义务是统一的，享受权利的同时要履行义务，如果不履行法定义务需要承担法律责任。A说法正确，符合题意；B：错误，扰乱市场未必是犯罪行为，排除；C：错误，商家不具有执法的权力，排除；D：错误，遵守规则既靠他律，也靠自律。排除；故本题选A。9. “米粒虽小，尤见礼义廉耻 ；节俭事微，可助兴国安邦”。粮食安全是“国之大者”，这告诉我们（ ）①维护国家粮食安全公民基本权利 ②节约粮食是中华民族的传统美德③粮食安全是国家安全观的重要基础④维护粮食安全有利于维护国家安全A. ①② B. ①③ C. ②④ D. ③④",
+      "options": [
+        "A. ①②",
+        "B. ①③",
+        "C. ②④",
+        "D. ③④"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:open(pred=B, err=knowledge)",
+        "v1.1:open(pred=B, err=knowledge)",
+        "v1.2:fixed(pred=B, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 159,
+      "subject": "politics",
+      "question": "2022年度全国最美家庭莫益娟夫妇，10年如一日照顾着没有血亲关系的孤寡老人，用实际行动教育孩子。他们的行为体现了（ ）A. 诚实守信 B. 勤俭节约 C. 乐于助人 D. 勇于创新",
+      "options": [
+        "A. 诚实守信",
+        "B. 勤俭节约",
+        "C. 乐于助人",
+        "D. 勇于创新"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 163,
+      "subject": "politics",
+      "question": "我国宪法规定，中华人民共和国的一切权力属于（ ）A. 公民 B. 人民 C. 政府 D. 全国人大",
+      "options": [
+        "A. 公民",
+        "B. 人民",
+        "C. 政府",
+        "D. 全国人大"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:open(pred=C, err=logic)",
+        "v1.1:open(pred=C, err=logic)",
+        "v1.2:open(pred=C, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 164,
+      "subject": "politics",
+      "question": "2021年全国成年国民阅读形式调查结果显示，随着网络的发展，人们的阅读方式选择不断丰富。这说明（ ）A. 纸质图书将被完全取代 B. 网络丰富生活，为文化传播搭建新平台 C. 网络阅读优于纸质阅读 D. 传统阅读已经没有价值",
+      "options": [
+        "A. 纸质图书将被完全取代",
+        "B. 网络丰富生活，为文化传播搭建新平台",
+        "C. 网络阅读优于纸质阅读",
+        "D. 传统阅读已经没有价值"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:open(pred=?, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 168,
+      "subject": "chinese",
+      "question": "下列对诗歌赏析不正确的一项是（ ）A. 诗歌意象是融入诗人主观情感的客观物象 B. 大漠孤烟直中的直字写出了边塞荒凉感 C. 所有诗歌都必须押韵和对仗 D. 诗歌的语言要求精炼形象",
+      "options": [
+        "A. 诗歌意象是融入诗人主观情感的客观物象",
+        "B. 大漠孤烟直中的直字写出了边塞荒凉感",
+        "C. 所有诗歌都必须押韵和对仗",
+        "D. 诗歌的语言要求精炼形象"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:fixed(pred=B, err=knowledge)",
+        "v1.1:open(pred=B, err=knowledge)",
+        "v1.2:fixed(pred=B, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 169,
+      "subject": "chinese",
+      "question": "下列句子朗读节奏划分正确的一项是（ ）A. 余因得遍观群书 B. 余因得遍观群书 C. 余因得遍观群书 D. 余因得遍观群书",
+      "options": [
+        "A. 余/因得/遍观群书",
+        "B. 余因得遍/观群书",
+        "C. 余因/得遍观/群书",
+        "D. 余/因得遍观/群书"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:open(pred=B, err=knowledge)",
+        "v1.2:open(pred=B, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 170,
+      "subject": "chinese",
+      "question": "下列对联中最适合挂在书房门口的是（ ）A. 生意兴隆通四海 B. 妙手回春除百病 C. 万卷古今消永日 D. 五谷丰登庆丰收",
+      "options": [
+        "A. 生意兴隆通四海",
+        "B. 妙手回春除百病",
+        "C. 万卷古今消永日",
+        "D. 五谷丰登庆丰收"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 172,
+      "subject": "chinese",
+      "question": "下列句子翻译不正确的一项是（ ）A. 学而不思则罔—学习而不思考就会迷惑 B. 温故而知新—温习旧知识能获得新体会 C. 三人行必有我师—几个人走路其中一定有我的老师 D. 学而时习之—学习后要按时复习",
+      "options": [
+        "A. 学而不思则罔—学习而不思考就会迷惑",
+        "B. 温故而知新—温习旧知识能获得新体会",
+        "C. 三人行必有我师—几个人走路其中一定有我的老师",
+        "D. 学而时习之—学习后要按时复习"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "logic",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:open(pred=B, err=logic)",
+        "v1.1:open(pred=B, err=logic)",
+        "v1.2:fixed(pred=B, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 173,
+      "subject": "chinese",
+      "question": "下列之字用法归类正确的一项是（ ）A. 均作代词 B. 均作助词 C. 一部分作代词一部分作助词 D. 一部分作动词一部分作介词",
+      "options": [
+        "A. 均作代词",
+        "B. 均作助词",
+        "C. 一部分作代词一部分作助词",
+        "D. 一部分作动词一部分作介词"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "logic",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:open(pred=B, err=logic)",
+        "v1.1:open(pred=B, err=logic)",
+        "v1.2:fixed(pred=B, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 174,
+      "subject": "chinese",
+      "question": "下列关于名著阅读的表述不正确的一项是（ ）A. 西游记中孙悟空大闹天宫体现反抗精神 B. 水浒传中宋江被称为及时雨 C. 骆驼祥子的作者是老舍 D. 红星照耀中国是虚构小说",
+      "options": [
+        "A. 西游记中孙悟空大闹天宫体现反抗精神",
+        "B. 水浒传中宋江被称为及时雨",
+        "C. 骆驼祥子的作者是老舍",
+        "D. 红星照耀中国是虚构小说"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:fixed(pred=B, err=knowledge)",
+        "v1.1:open(pred=B, err=knowledge)",
+        "v1.2:fixed(pred=B, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 175,
+      "subject": "chinese",
+      "question": "下列句子中没有语病的一项是（ ）A. 通过这次活动使我们开阔了眼界 B. 深圳的夏天是一个美丽的城市 C. 能否刻苦学习是取得好成绩的关键 D. 我们要养成认真检查作业的习惯",
+      "options": [
+        "A. 通过这次活动使我们开阔了眼界",
+        "B. 深圳的夏天是一个美丽的城市",
+        "C. 能否刻苦学习是取得好成绩的关键",
+        "D. 我们要养成认真检查作业的习惯"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 176,
+      "subject": "chinese",
+      "question": "下列关于文学常识的表述不正确的一项是（ ）A. 诗经是我国最早的一部诗歌总集 B. 史记是西汉司马迁所著 C. 战国策的作者是西汉刘向 D. 李白被称为诗圣",
+      "options": [
+        "A. 诗经是我国最早的一部诗歌总集",
+        "B. 史记是西汉司马迁所著",
+        "C. 战国策的作者是西汉刘向",
+        "D. 李白被称为诗圣"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:fixed(pred=B, err=knowledge)",
+        "v1.1:open(pred=B, err=knowledge)",
+        "v1.2:fixed(pred=B, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 180,
+      "subject": "chemistry",
+      "question": "下列反应中属于置换反应的是（ ）A. 2H₂+O₂=2H₂O B. Zn+H₂SO₄=ZnSO₄+H₂ C. CaCO₃=CaO+CO₂ D. NaOH+HCl=NaCl+H₂O",
+      "options": [
+        "A. 2H₂+O₂=2H₂O",
+        "B. Zn+H₂SO₄=ZnSO₄+H₂",
+        "C. CaCO₃=CaO+CO₂",
+        "D. NaOH+HCl=NaCl+H₂O"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:open(pred=C, err=logic)",
+        "v1.1:open(pred=C, err=logic)",
+        "v1.2:open(pred=C, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 181,
+      "subject": "chemistry",
+      "question": "下列物质敞口放置质量会增加且变质的是（ ）A. 浓盐酸 B. 浓硫酸 C. 氢氧化钠固体 D. 食盐",
+      "options": [
+        "A. 浓盐酸",
+        "B. 浓硫酸",
+        "C. 氢氧化钠固体",
+        "D. 食盐"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 182,
+      "subject": "chemistry",
+      "question": "下列实验现象描述正确的是（ ）A. 硫在氧气中燃烧发出淡蓝色火焰 B. 铁丝在氧气中燃烧生成四氧化三铁 C. 镁条在空气中燃烧发出耀眼白光 D. 木炭在空气中燃烧生成黑色固体",
+      "options": [
+        "A. 硫在氧气中燃烧发出淡蓝色火焰",
+        "B. 铁丝在氧气中燃烧生成四氧化三铁",
+        "C. 镁条在空气中燃烧发出耀眼白光",
+        "D. 木炭在空气中燃烧生成黑色固体"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:open(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 183,
+      "subject": "chemistry",
+      "question": "下列各组物质中能用酚酞试液鉴别的是（ ）A. 食盐水和蒸馏水 B. 稀盐酸和稀硫酸 C. 石灰水和氢氧化钠溶液 D. 稀盐酸和石灰水",
+      "options": [
+        "A. 食盐水和蒸馏水",
+        "B. 稀盐酸和稀硫酸",
+        "C. 石灰水和氢氧化钠溶液",
+        "D. 稀盐酸和石灰水"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:fixed(pred=B, err=logic)",
+        "v1.1:open(pred=B, err=logic)",
+        "v1.2:fixed(pred=B, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 185,
+      "subject": "politics",
+      "question": "我国宪法规定中华人民共和国的一切权力属于（ ）A. 公民 B. 人民 C. 政府 D. 全国人大",
+      "options": [
+        "A. 公民",
+        "B. 人民",
+        "C. 政府",
+        "D. 全国人大"
+      ],
+      "correct_answer": "B",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "C",
+      "error_history": [
+        "v1.0:open(pred=C, err=logic)",
+        "v1.1:open(pred=C, err=logic)",
+        "v1.2:open(pred=C, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 189,
+      "subject": "physics",
+      "question": "一束光从空气斜射入水中，入射角增大时折射角（ ）A. 不变 B. 减小 C. 也增大 D. 先增大后减小",
+      "options": [
+        "A. 不变",
+        "B. 减小",
+        "C. 也增大",
+        "D. 先增大后减小"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "logic",
+      "latest_model_answer": "?",
+      "error_history": [
+        "v1.0:fixed(pred=?, err=logic)",
+        "v1.1:open(pred=?, err=logic)",
+        "v1.2:fixed(pred=?, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 190,
+      "subject": "physics",
+      "question": "下列关于声音的说法正确的是（ ）A. 声音只能在空气中传播 B. 声音传播速度与介质无关 C. 声音由物体振动产生 D. 声音不能在水中传播",
+      "options": [
+        "A. 声音只能在空气中传播",
+        "B. 声音传播速度与介质无关",
+        "C. 声音由物体振动产生",
+        "D. 声音不能在水中传播"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "A",
+      "error_history": [
+        "v1.0:open(pred=A, err=logic)",
+        "v1.1:open(pred=A, err=logic)",
+        "v1.2:open(pred=A, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 191,
+      "subject": "physics",
+      "question": "下列电器中利用电流热效应工作的是（ ）A. 电视机 B. 电风扇 C. 电饭煲 D. 洗衣机",
+      "options": [
+        "A. 电视机",
+        "B. 电风扇",
+        "C. 电饭煲",
+        "D. 洗衣机"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "logic",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:open(pred=D, err=logic)",
+        "v1.1:open(pred=D, err=logic)",
+        "v1.2:open(pred=D, err=logic)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 192,
+      "subject": "chinese",
+      "question": "下列词语中没有错别字的一项是（ ）A. 迫不及待 B. 走头无路 C. 一诺千斤 D. 谈笑风声",
+      "options": [
+        "A. 迫不及待",
+        "B. 走头无路",
+        "C. 一诺千斤",
+        "D. 谈笑风声"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.1",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:open(pred=D, err=knowledge)",
+        "v1.1:open(pred=D, err=knowledge)",
+        "v1.2:open(pred=D, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 193,
+      "subject": "chinese",
+      "question": "下列句子中修辞手法判断正确的一项是（ ）A. 月亮像大圆盘—拟人 B. 鸟儿唱歌—比喻 C. 飞流直下三千尺—夸张 D. 教室里很安静—排比",
+      "options": [
+        "A. 月亮像大圆盘—拟人",
+        "B. 鸟儿唱歌—比喻",
+        "C. 飞流直下三千尺—夸张",
+        "D. 教室里很安静—排比"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:fixed(pred=B, err=knowledge)",
+        "v1.1:open(pred=B, err=knowledge)",
+        "v1.2:fixed(pred=B, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 194,
+      "subject": "chinese",
+      "question": "下列对文章的分析不正确的一项是（ ）A. 议论文三要素论点论据论证 B. 说明文语言准确严谨 C. 小说含开端发展高潮结局 D. 散文须有完整故事线索",
+      "options": [
+        "A. 议论文三要素论点论据论证",
+        "B. 说明文语言准确严谨",
+        "C. 小说含开端发展高潮结局",
+        "D. 散文须有完整故事线索"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "A",
+      "error_history": [
+        "v1.0:open(pred=C, err=knowledge)",
+        "v1.2:open(pred=A, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 195,
+      "subject": "chinese",
+      "question": "下列关于名著的表述不正确的一项是（ ）A. 大闹天宫体现孙悟空反抗精神 B. 宋江被称为及时雨 C. 老舍著骆驼祥子 D. 红星照耀中国是虚构小说",
+      "options": [
+        "A. 大闹天宫体现孙悟空反抗精神",
+        "B. 宋江被称为及时雨",
+        "C. 老舍著骆驼祥子",
+        "D. 红星照耀中国是虚构小说"
+      ],
+      "correct_answer": "D",
+      "version_status": {
+        "v1.0": "fixed",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.0",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:fixed(pred=B, err=knowledge)",
+        "v1.1:open(pred=B, err=knowledge)",
+        "v1.2:fixed(pred=B, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 197,
+      "subject": "chinese",
+      "question": "下列之字用法归类正确的一项是（ ）A. 均作代词 B. 均作助词 C. 部分代词部分助词 D. 部分动词部分介词",
+      "options": [
+        "A. 均作代词",
+        "B. 均作助词",
+        "C. 部分代词部分助词",
+        "D. 部分动词部分介词"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "logic",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:open(pred=D, err=logic)",
+        "v1.1:open(pred=D, err=logic)",
+        "v1.2:fixed(pred=D, err=logic)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 198,
+      "subject": "chinese",
+      "question": "下列句子朗读节奏划分正确的一项是（ ）A. 余因得遍观群书 B. 余因得遍观群书 C. 余因得遍观群书 D. 余因得遍观群书",
+      "options": [
+        "A. 余/因得/遍观群书",
+        "B. 余因得遍/观群书",
+        "C. 余因/得遍观/群书",
+        "D. 余/因得遍观/群书"
+      ],
+      "correct_answer": "A",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "not_tested",
+        "v1.2": "open"
+      },
+      "current_status": "open",
+      "first_appeared": "v1.0",
+      "fixed_in": null,
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "B",
+      "error_history": [
+        "v1.0:open(pred=B, err=knowledge)",
+        "v1.2:open(pred=B, err=knowledge)"
+      ],
+      "is_persistent": true,
+      "is_new_in_v1_2": false
+    },
+    {
+      "id": 200,
+      "subject": "chemistry",
+      "question": "下列实验现象描述正确的是（ ）A. 硫燃烧淡蓝色火焰 B. 铁燃烧火星四射 C. 镁燃烧耀眼白光 D. 木炭燃烧黑烟",
+      "options": [
+        "A. 硫燃烧淡蓝色火焰",
+        "B. 铁燃烧火星四射",
+        "C. 镁燃烧耀眼白光",
+        "D. 木炭燃烧黑烟"
+      ],
+      "correct_answer": "C",
+      "version_status": {
+        "v1.0": "open",
+        "v1.1": "open",
+        "v1.2": "fixed"
+      },
+      "current_status": "fixed",
+      "first_appeared": "v1.1",
+      "fixed_in": "v1.2",
+      "latest_error_type": "knowledge",
+      "latest_model_answer": "D",
+      "error_history": [
+        "v1.0:open(pred=D, err=knowledge)",
+        "v1.1:open(pred=D, err=knowledge)",
+        "v1.2:fixed(pred=D, err=knowledge)"
+      ],
+      "is_persistent": false,
+      "is_new_in_v1_2": false
+    }
+  ]
+}
