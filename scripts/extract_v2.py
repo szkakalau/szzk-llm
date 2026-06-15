@@ -66,6 +66,16 @@ def extract_answers_from_section(paragraphs: list) -> dict:
             if ans_m:
                 answers[current_qnum] = ans_m.group(1)
 
+    # 如果上面没匹配到，尝试 "题号.答案字母" 格式 (如 "1.D   2.A   3.D")
+    if len(answers) < 3:
+        for text in paragraphs:
+            # 匹配 "1.D" "2.A" "15.B" 等
+            pairs = re.findall(r'(\d+)\s*[\.、]\s*([A-D])\b', text)
+            for qnum_str, letter in pairs:
+                qnum = int(qnum_str)
+                if qnum not in answers:
+                    answers[qnum] = letter
+
     return answers
 
 
@@ -106,7 +116,12 @@ def extract_questions_from_paragraphs(paragraphs: list, subject: str, source: st
         if current_q:
             opt_m = re.match(r'^([A-D])[\.\、．）)]\s*(.+)', text)
             if opt_m:
-                current_opts.append(text)
+                # 拆分合并的选项: "A．xxx B．yyy" → ["A．xxx", "B．yyy"]
+                if re.search(r'\s+[B-D][\.\、．）)]', text):
+                    parts = re.split(r'\s+(?=[A-D][\.\、．）)])', text)
+                    current_opts.extend([p.strip() for p in parts if re.match(r'^[A-D][\.\、．）)]', p.strip())])
+                else:
+                    current_opts.append(text)
                 continue
             # 纯选项字母
             opt_m2 = re.match(r'^([A-D])[\.\、．）)]\s*$', text)
@@ -152,12 +167,21 @@ def process_combined_file(filepath: Path, subject: str) -> list[dict]:
     # 收集所有段落文本
     all_paras = [p.text.strip() for p in doc.paragraphs if p.text.strip()]
 
-    # 找到"参考答案"分隔线
+    # 找到"参考答案"分隔线 (多种变体)
     answer_start = len(all_paras)
+    answer_markers = ["参考答案", "试题解析", "答案与解析", "答案及解析",
+                      "参考答案与试题解析", "参考答案及解析"]
     for i, text in enumerate(all_paras):
-        if "参考答案" in text or "试题解析" in text:
-            answer_start = i
+        for marker in answer_markers:
+            if marker in text:
+                answer_start = i
+                break
+        if answer_start < len(all_paras):
             break
+
+    # 如果没找到答案分隔线，从后20%开始搜索 (答案通常在末尾)
+    if answer_start >= len(all_paras):
+        answer_start = max(0, int(len(all_paras) * 0.8))
 
     # 分离题目区和答案区
     question_paras = all_paras[:answer_start]
