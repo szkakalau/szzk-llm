@@ -1,0 +1,18 @@
+# SZZKLLM v1.4 训练配置 — 陷阱变体增强
+# 用法: python sft/train.py --config sft/config_v1.4.yaml
+model: Qwen/Qwen2.5-0.5B
+train_data: data/v1.4/train.json
+val_data: data/v1.0/val.json
+output_dir: models/v1.4
+epochs: 2
+batch_size: 2
+gradient_accumulation: 2
+learning_rate: 0.00002
+warmup_steps: 50
+max_seq_length: 1024
+save_steps: 100
+logging_steps: 10
+use_lora: false
+wandb_project: szzk-llm
+wandb_entity: 33350441-sightwhale
+system_prompt: "你是一个专业的中学学科答疑助手，请用简洁准确的语言回答问题。"
