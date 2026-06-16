@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SZZKLLM 小红书笔记 - 多页</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #222; padding: 20px; }
+  .page {
+    width: 1080px; height: 1440px;
+    margin: 20px auto;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    box-shadow: 0 0 30px rgba(0,0,0,.3);
+  }
+
+  /* ═══════ 第1页: 封面 ═══════ */
+  .p1-bg {
+    width: 100%; height: 100%;
+    background: linear-gradient(160deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #533483 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .p1-bg::before { content:''; position:absolute; top:-200px; right:-200px; width:600px; height:600px; background:radial-gradient(circle, rgba(102,126,234,.3) 0%, transparent 70%); border-radius:50%; }
+  .p1-bg::after  { content:''; position:absolute; bottom:-100px; left:-100px; width:400px; height:400px; background:radial-gradient(circle, rgba(245,87,108,.2) 0%, transparent 70%); border-radius:50%; }
+  .p1-emoji { font-size: 120px; position: relative; z-index: 1; margin-bottom: 20px; }
+  .p1-title { font-size: 72px; font-weight: 900; color: white; position: relative; z-index: 1; text-align: center; line-height: 1.2; }
+  .p1-title span { background: linear-gradient(90deg, #f093fb, #f5576c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .p1-sub  { font-size: 32px; color: rgba(255,255,255,.7); position: relative; z-index: 1; margin-top: 16px; font-weight: 300; }
+  .p1-score { display:inline-block; background:rgba(255,255,255,.12); border:3px solid rgba(255,255,255,.4); border-radius: 30px; padding: 16px 48px; font-size: 80px; font-weight: 900; color: #38f9d7; margin-top: 32px; position: relative; z-index: 1; backdrop-filter: blur(4px); }
+  .p1-score small { font-size: 28px; color: rgba(255,255,255,.6); }
+  .p1-footer { position: absolute; bottom: 60px; color: rgba(255,255,255,.4); font-size: 24px; z-index: 1; }
+
+  /* ═══════ 第2页: 做了什么 ═══════ */
+  .p2 { padding: 80px 72px; }
+  .p2 h2 { font-size: 52px; font-weight: 900; margin-bottom: 48px; }
+  .p2 h2 span { background: linear-gradient(90deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .p2 .big-num { display: flex; gap: 40px; margin-bottom: 48px; }
+  .p2 .big-num > div { flex: 1; text-align: center; padding: 40px 20px; background: #f8f9ff; border-radius: 24px; }
+  .p2 .big-num .num { font-size: 72px; font-weight: 900; color: #667eea; }
+  .p2 .big-num .label { font-size: 26px; color: #888; margin-top: 8px; }
+  .p2 .flow { display: flex; align-items: center; gap: 16px; font-size: 28px; color: #555; flex-wrap: wrap; }
+  .p2 .flow span { background: #f0f0f0; padding: 12px 24px; border-radius: 16px; white-space: nowrap; }
+  .p2 .flow .arrow { color: #667eea; font-size: 36px; background: none; padding: 0; }
+  .p2 .tags { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 48px; }
+  .p2 .tag { padding: 14px 28px; border-radius: 20px; font-size: 28px; font-weight: 700; }
+  .tag-1 { background: #ebf4ff; color: #2b6cb0; }
+  .tag-2 { background: #e6ffed; color: #2f855a; }
+  .tag-3 { background: #faf5ff; color: #6b46c1; }
+  .tag-4 { background: #ffeaea; color: #e53e3e; }
+
+  /* ═══════ 第3页: 成绩单 ═══════ */
+  .p3 { padding: 80px 72px; }
+  .p3 h2 { font-size: 52px; font-weight: 900; margin-bottom: 48px; }
+  .p3 h2 span { background: linear-gradient(90deg, #43e97b, #38f9d7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .p3 .bar { display: flex; align-items: center; gap: 24px; margin: 28px 0; }
+  .p3 .bar .emoji { font-size: 40px; width: 60px; text-align: center; }
+  .p3 .bar .name { font-size: 32px; font-weight: 700; width: 100px; text-align: right; }
+  .p3 .bar .track { flex:1; height: 44px; background: #f0f0f0; border-radius: 22px; overflow: hidden; }
+  .p3 .bar .fill { height: 100%; border-radius: 22px; display: flex; align-items: center; justify-content: flex-end; padding-right: 20px; color: white; font-size: 28px; font-weight: 800; }
+  .p3 .total { text-align: center; margin-top: 48px; font-size: 36px; color: #888; }
+  .p3 .total big { font-size: 64px; font-weight: 900; color: #667eea; }
+
+  /* ═══════ 第4页: 进化史 ═══════ */
+  .p4 { padding: 80px 72px; }
+  .p4 h2 { font-size: 52px; font-weight: 900; margin-bottom: 48px; }
+  .p4 h2 span { background: linear-gradient(90deg, #f093fb, #f5576c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .p4 .evo { display: flex; flex-direction: column; gap: 32px; }
+  .p4 .evo-row { display: flex; align-items: center; gap: 24px; padding: 28px 36px; background: #fafafa; border-radius: 24px; border-left: 8px solid #e0e0e0; }
+  .p4 .evo-row.highlight { background: linear-gradient(135deg, #fff5f5, #fef5e7); border-left-color: #f5576c; }
+  .p4 .evo-row .ver { font-size: 28px; font-weight: 800; color: #667eea; width: 80px; }
+  .p4 .evo-row .acc { font-size: 48px; font-weight: 900; width: 150px; text-align: center; }
+  .p4 .evo-row .desc { flex: 1; font-size: 28px; color: #666; }
+  .p4 .evo-row.highlight .acc { color: #f5576c; }
+  .p4 .evo-row.highlight .desc { font-weight: 700; color: #333; }
+  .p4 .evo-row.end { border-left-color: #43e97b; background: #f0fff4; }
+  .p4 .evo-row.end .acc { color: #38a169; }
+
+  /* ═══════ 第5页: 成本 & 发现 ═══════ */
+  .p5 { padding: 80px 72px; }
+  .p5 h2 { font-size: 52px; font-weight: 900; margin-bottom: 48px; }
+  .p5 .money { display: flex; gap: 24px; margin-bottom: 48px; }
+  .p5 .money > div { flex: 1; text-align: center; padding: 36px 20px; border-radius: 24px; }
+  .p5 .money .num { font-size: 64px; font-weight: 900; }
+  .p5 .money .label { font-size: 26px; color: #888; margin-top: 8px; }
+  .p5 .m-card { background: #f8f9ff; }
+  .p5 .m-card .num { color: #667eea; }
+  .p5 .m-card2 { background: #f0fff4; }
+  .p5 .m-card2 .num { color: #38a169; }
+  .p5 .m-card3 { background: #fff5f5; }
+  .p5 .m-card3 .num { color: #f5576c; }
+
+  .p5 .insight { padding: 32px 40px; border-radius: 24px; margin: 24px 0; font-size: 30px; line-height: 1.6; }
+  .p5 .insight b { display: block; font-size: 34px; margin-bottom: 8px; }
+  .p5 .in-1 { background: #fff5f5; border-left: 8px solid #f56565; }
+  .p5 .in-2 { background: #f0fff4; border-left: 8px solid #48bb78; }
+  .p5 .in-3 { background: #ebf4ff; border-left: 8px solid #4299e1; }
+
+  /* ═══════ 第6页: 开源 ═══════ */
+  .p6 { padding: 80px 72px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; }
+  .p6-emoji { font-size: 100px; margin-bottom: 32px; }
+  .p6 h2 { font-size: 56px; font-weight: 900; margin-bottom: 32px; }
+  .p6 p { font-size: 30px; color: #666; line-height: 1.8; margin-bottom: 48px; }
+  .p6 .btn { display: block; width: 80%; padding: 32px; border-radius: 30px; font-size: 36px; font-weight: 800; text-decoration: none; color: white; margin: 12px 0; }
+  .p6 .btn-gh { background: linear-gradient(135deg, #24292e, #444d56); }
+  .p6 .btn-demo { background: linear-gradient(135deg, #667eea, #764ba2); }
+  .p6 .tags { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 40px; }
+  .p6 .tags span { padding: 10px 24px; border-radius: 16px; font-size: 26px; background: #f0f0f0; color: #888; }
+
+  /* 页码范围 */
+  .page-num { position: absolute; bottom: 40px; right: 60px; font-size: 24px; color: #ccc; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 第1页: 封面 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page">
+<div class="p1-bg">
+  <div class="p1-emoji">🤖</div>
+  <div class="p1-title">一个人 4 天<br><span>89.3%</span> 准确率</div>
+  <div class="p1-sub">我训练的中考 AI 答题模型</div>
+  <div class="p1-score">89.3<small>%</small></div>
+  <div class="p1-footer">Qwen2.5-7B · LoRA · 5,527 数据 · 7 学科</div>
+</div>
+<div class="page-num">1/6</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 第2页: 做了什么 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page p2">
+  <h2>🧠 <span>我做了什么</span></h2>
+  <div class="big-num">
+    <div><div class="num">303</div><div class="label">份原始试卷</div></div>
+    <div><div class="num">1,193</div><div class="label">道选择题</div></div>
+    <div><div class="num">5,527</div><div class="label">扩增后</div></div>
+  </div>
+  <div class="flow" style="font-size:26px">
+    <span>.docx 试卷</span><span class="arrow">→</span>
+    <span>python-docx 提取</span><span class="arrow">→</span>
+    <span>DeepSeek 扩增</span><span class="arrow">→</span>
+    <span>Qwen2.5-7B LoRA</span>
+  </div>
+  <div class="tags">
+    <span class="tag tag-1">Qwen2.5-7B</span>
+    <span class="tag tag-2">LoRA r=64</span>
+    <span class="tag tag-3">5,527 训练数据</span>
+    <span class="tag tag-4">RTX 4090 24GB</span>
+  </div>
+  <p style="font-size:28px;color:#888;margin-top:48px;line-height:1.8">
+    覆盖深圳中考 2008-2025 年真题<br>
+    语文 · 数学 · 英语 · 物理 · 化学 · 历史 · 道法
+  </p>
+  <div class="page-num">2/6</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 第3页: 成绩单 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page p3">
+  <h2>📊 <span>各科成绩单</span></h2>
+  <div class="bar"><span class="emoji">📜</span><span class="name">历史</span><div class="track"><div class="fill" style="width:94%;background:linear-gradient(90deg,#43e97b,#38f9d7)">94.1%</div></div></div>
+  <div class="bar"><span class="emoji">🇬🇧</span><span class="name">英语</span><div class="track"><div class="fill" style="width:94%;background:linear-gradient(90deg,#4facfe,#00f2fe)">93.8%</div></div></div>
+  <div class="bar"><span class="emoji">⚖️</span><span class="name">道法</span><div class="track"><div class="fill" style="width:93%;background:linear-gradient(90deg,#a18cd1,#fbc2eb)">92.9%</div></div></div>
+  <div class="bar"><span class="emoji">⚡</span><span class="name">物理</span><div class="track"><div class="fill" style="width:90%;background:linear-gradient(90deg,#4fd1c5,#2b6cb0)">90.3%</div></div></div>
+  <div class="bar"><span class="emoji">🧪</span><span class="name">化学</span><div class="track"><div class="fill" style="width:89%;background:linear-gradient(90deg,#f093fb,#f5576c)">89.0%</div></div></div>
+  <div class="bar"><span class="emoji">📖</span><span class="name">语文</span><div class="track"><div class="fill" style="width:82%;background:linear-gradient(90deg,#fa709a,#fee140)">82.4%</div></div></div>
+  <div class="bar"><span class="emoji">📐</span><span class="name">数学</span><div class="track"><div class="fill" style="width:70%;background:linear-gradient(90deg,#bdc3c7,#2c3e50)">70.4%</div></div></div>
+  <div class="total">综合准确率 <big>89.3%</big></div>
+  <div class="page-num">3/6</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 第4页: 进化史 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page p4">
+  <h2>📈 <span>模型进化史</span></h2>
+  <div class="evo">
+    <div class="evo-row">
+      <span class="ver">v1.3</span><span class="acc">63.5%</span><span class="desc">0.5B 小模型 · 手工 630 条数据 · CPU 训练</span>
+    </div>
+    <div class="evo-row">
+      <span class="ver">v2</span><span class="acc">72.4%</span><span class="desc">7B 大模型 · 真题 1,193 条 · RTX 4090</span>
+    </div>
+    <div class="evo-row highlight">
+      <span class="ver">v3 ⭐</span><span class="acc">89.3%</span><span class="desc">数据扩增 5,527 条 · +16.9% 暴涨！</span>
+    </div>
+    <div class="evo-row end">
+      <span class="ver">→ next</span><span class="acc">95%?</span><span class="desc">Math 含图题 + 答案全标准 · 可期</span>
+    </div>
+  </div>
+  <div class="page-num">4/6</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 第5页: 成本 & 关键发现 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page p5">
+  <h2>💡 <span>关键发现 & 成本</span></h2>
+  <div class="money">
+    <div class="m-card"><div class="num">¥10</div><div class="label">GPU 租用</div></div>
+    <div class="m-card2"><div class="num">¥0.30</div><div class="label">API 扩增</div></div>
+    <div class="m-card3"><div class="num">4 天</div><div class="label">开发时间</div></div>
+  </div>
+  <div class="insight in-1">
+    <b>🔑 数据扩增比模型大小更重要</b>
+    1,193→5,527 题，准确率 72%→89%。让 AI 自己出题再学，成本 ¥0.30。
+  </div>
+  <div class="insight in-2">
+    <b>🚫 CoT 对选择题有害</b>
+    加入思维链后 62.5%→43.5%。直接输出答案反而更准。
+  </div>
+  <div class="insight in-3">
+    <b>💸 一个人 ¥11 就能做 AI</b>
+    RTX 4090 租 2 小时 + DeepSeek API ，不需要公司和团队。
+  </div>
+  <div class="page-num">5/6</div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- 第6页: 开源 -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="page p6">
+  <div class="p6-emoji">🌟</div>
+  <h2>开源 & 在线体验</h2>
+  <p>代码·数据·模型·训练脚本<br>全部开源，一键复现</p>
+  <a class="btn btn-gh" href="https://github.com/szkakalau/szzk-llm" target="_blank">🔗 GitHub 项目主页</a>
+  <a class="btn btn-demo" href="https://u1046415-a5b8-78a828a3.westc.seetacloud.com:8443" target="_blank">🚀 在线 Demo 体验</a>
+  <div class="tags">
+    <span>#AI教育</span><span>#大模型微调</span><span>#中考</span><span>#开源</span><span>#一个人做AI</span>
+  </div>
+  <div class="page-num">6/6</div>
+</div>
+
+</body>
+</html>
