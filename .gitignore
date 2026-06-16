@@ -48,3 +48,9 @@ wandb/
 # Cache
 .cache/
 *.cache
+
+# Temp/Progress files
+*_progress.json
+*_dryrun.json
+*_dry_run.json
+*_progress*
