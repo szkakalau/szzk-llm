@@ -236,22 +236,22 @@
   },
   {
     "question": "5．下列说法正确的是 A．“打开电视机，正在播世界杯足球赛”是必然事件 B．“掷一枚硬币正面朝上的概率是”表示每抛掷硬币2次就有1次正面朝上 C．一组数据2，3，4，5，5，6的众数和中位数都是5 D．甲组数据的方差S甲2＝0.24，乙组数据的方差S甲2＝0.03，则乙组数据比甲组数据稳定",
-    "answer": "D",
-    "subject": "math"
-  },
-  {
-    "question": "8．观察下列算式，用你所发现的规律得出22010的末位数字是 21＝2，22＝4，23＝8，24＝16，25＝32，26＝64，27＝128，28＝256，…， A．2 B．4 C．6 D．8",
     "answer": "B",
     "subject": "math"
   },
   {
+    "question": "8．观察下列算式，用你所发现的规律得出22010的末位数字是 21＝2，22＝4，23＝8，24＝16，25＝32，26＝64，27＝128，28＝256，…， A．2 B．4 C．6 D．8",
+    "answer": "D",
+    "subject": "math"
+  },
+  {
     "question": "9．如图1，△ABC中，AC＝AD＝BD，∠DAC＝80º，则∠B的度数是 A．40º B．35º C．25º D．20º",
-    "answer": "C",
+    "answer": "A",
     "subject": "math"
   },
   {
     "question": "10．有四张质地相同的卡片，它们的背面相同，其中两张的正面印有“粽子”的图案，另外两张的正面印有“龙舟”的图案，现将它们背面朝上，洗均匀后排列在桌面，任意翻开两张，那么两张图案一样的概率是 A． B． C． D．",
-    "answer": "A",
+    "answer": "C",
     "subject": "math"
   },
   {
@@ -261,7 +261,7 @@
   },
   {
     "question": "12．如图2，点P（3a，a）是反比例函y＝（k＞0）与⊙O的一个交点， 图中阴影部分的面积为10π，则反比例函数的解析式为 A．y＝ B．y＝ C．y＝ D．y＝",
-    "answer": "D",
+    "answer": "C",
     "subject": "math"
   },
   {
@@ -1211,7 +1211,7 @@
   },
   {
     "question": "26. The proffessor was from _______. A. Australia B. Britain C. Japan D. America",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -1221,42 +1221,42 @@
   },
   {
     "question": "28. He wanted to find a doctor because _________. A. he wanted to do science research B. he wanted to fly a balloon C. he wanted to speak to a local D. he became sick",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "29. The young doctor was the ______ doctor the professor found. A. first B. second C. third D. fourth",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "30. Which of the following statements is true according to the passage? A. The professor went to the remote area to see a doctor. B. The doctor who had five balloons was the best one. C. The doctor had five balloons because he had lost five patients. D. The local told the professor to see the doctor with five balloons.",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "31．________is a hot topic for a big mall． A．To spend money B. To save energy C．To keep the mall bright D．To buy things",
-    "answer": "B",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "32. Malls use infrared faucets mainly because________ A．they save water B.they are fancy C. they are simple D.they turn themselves off",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "33．Which of the following cannot save energy? A．Using fewer lights． B.Using infrared faucets． C．Using air-conditioners D．Keeping lights clean．",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "34．What will the fourth paragraph probably talk about? A. How to save water when using infrared faucets in the mall B．How to save energy when using air-conditioners in the mall C. How to save money when shopping in the mall． D．How to spend money when shopping in the mall．",
-    "answer": "B",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "35．The best title for the passage is_________ A．Lights, faucets and air-eonditioners B．Spending less money C. Energy saving at the mall D．A hot topic",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -1406,12 +1406,12 @@
   },
   {
     "question": "41. The Expo is first hosted by _______. A. a developed country B. a developing country C. a rich country D. a small country",
-    "answer": "B",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "42. Shenzhen wants to show visitors _______. A. its scenic spot B. its delicious food C. ideas of city developmen D. its industry",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -1421,12 +1421,12 @@
   },
   {
     "question": "44. The volunteers from Shenzhen can speak ________. A. English and Cantonese B. Chinese and Cantonese C. English and French D. English and Chinese",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "45. Visitors to the Shenzhen Pavilion ________. A. don’t like the Shenzhen Pavilion B. can sing and dance in the Shenzhen Pavilion C. can only watch the exhibition D. are fond of the Shenzhen Pavilion",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -1436,22 +1436,22 @@
   },
   {
     "question": "47. In this project, the electronic books are ________. A. expensive to readers B. from the U.S.A. C. in different languages D. for children only",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "48. The underlined word “goal” probably means ________ in the passage. A. 山羊 B. 煤炭 C. 进球得分 D. 目标",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "49. The third paragraph is mainly about ________. A. the purpose of the project B. the users of the project C. people working for the project D. museums and libraries",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "50. The best title of the passage is ________. A. The International Children’s Digital Library B. How to Choose Books for Children C. How to Search Books on the Internet D. Internet Users",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -1741,42 +1741,42 @@
   },
   {
     "question": "32. How many times did the teacher try to explain the word? A. Once B. Twice C. Three times D. Four times",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "33. The students shouted ‘Practice!’because they_______. A. the old teacher was practising falling off the building B. the old teacher told them to do more sports. C. the old teacher wanted them to practise with D. the old teacher didn’t mean anything at all",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "35. We can infer(推断)from the passage that_______. A. one of the students had an accident in class B. the students were not listening to the teacher carefully C. the teacher would explain it again in another way D. the teacher was very happy with the students’ answers B.",
-    "answer": "B",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "36. How many coaches were there in the first season? A. Five B. Four C. Three D. Two",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "37. Who was the winner of the first season? A. Liu Huan B. Jacky Cheung C. Liang Bo D. Faye Wong",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "38. According to the passage, who will probably be one of the coaches again in the second season? A. Liu Huan B. Na Ying C. Yang Kun D. Harlem Yu",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "39. The last paragraph talks about_______. A. the plan for choosing coaches. B. the plan for choosing contestants C. the changes in the process of the second season D. how to find contestants from around the world",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "40. According to the passage, which of the following statements is TRUE? A. ‘The Voice of China’is based on another similar programme. B. There will be 3000 contestants for the show in the second season. C. The coaches of the second season have already been decided. D. The process will be the same in the second season. C.",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -1786,7 +1786,7 @@
   },
   {
     "question": "42. Why is Shaoxing is known as a city of scholars? A. Because Shaoxing has a history of more than 1000 years B. Because the great writer Lu Xun was born in Shaoxing C. Because a number of scholars were born in Shaoxing or once lived there D. Because there are many houses of historical people",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -1926,7 +1926,7 @@
   },
   {
     "question": "53. The underlined word “This” (Paragraph 4) refers to___________. A. the success of Diary of a Madman B. the use of everyday language C. the first Chinese novel D. The True Story of Ah Q",
-    "answer": "B",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -1966,7 +1966,7 @@
   },
   {
     "question": "61. Where did Li Hua see Mrs, Daniels’ advertisement? A. At London University B. In a newspaper C. On the Internet D. On TV",
-    "answer": "B",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -2311,12 +2311,12 @@
   },
   {
     "question": "36. What does “it” refer to in the paragraph 4? A. The journey. B. The app. C. The passenger. D. The underground.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "37. Which is the best title for the passage? A. The Best Train Ride. B. The Enjoyable Journey. C. The Future Library. D. The Moving Library. C.cool and cloudy D.warm and foggy",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -2326,32 +2326,32 @@
   },
   {
     "question": "40.According to Dekhtyar’s words ,we can know that_____ A.This was his second time to come to China . B.The weather in Shenzhen was a little hot than that in Russia at that time. C.He would take part in another Marathon in Shenzhen in 2018. D.Everyone of the host city should be an athlete of the Marathon.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "41.Which statement is true about this passage? A. The best runners of this marathon are Africans. B. Evgeny Dekhtyar reached the finish line at about a quarter to ten. C. Bekele Muluneh Metaferia finished the marathon in 2 hours 10 minutes and 40 seconds. D.The full-length marathon is for the men runners ,while the half-length marathon is for the women ones.",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "42. What do we know about Justin Tong? A. He enjoyed a happy life. B. He felt sorry for the other kids. C. He always sold newspapers. D. He seldom collected rubbish.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "43. Who will probably succeed in the future according to Paragraph 2? A. Children who enjoy happier and richer lives. B. Children who work in the home or community. C. Children who take part in Daniel Brown’s study. D. Children who feel good about people around them.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "44. How did Brown follow the children in his study? A. By giving housework and praise. B. By interviewing and giving scores. C. By setting goals and showing love. D. By solving problems and testing them.",
-    "answer": "B",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "45. What’s the purpose of the passage? A. To talk about an interesting study. B. To introduce Justin Tong’s success. C. To tell us about childhood activities. D. To encourage children to work hard.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -2456,42 +2456,42 @@
   },
   {
     "question": "12. From 1966 to 1971, what did the villagers do to improve their living situation? A. They planted grapes to earn money. B. They carried water and soil to their village to improve their lands. C. They moved to another place to live a better life. D. They built a lot of factories.",
-    "answer": "B",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "13. Which word can be used to describe the villagers? A. Hard-working. B. Lazy. C. Kind-hearted. D. Stupid.",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "14. When was Shashiyu called \"National Forest Village\"? A. In 2009. B. In 2004. C. In 2015. D. In 2019.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "15. Where can you probably read the passage? A. In a storybook. B. In a newspaper. C. Ina sports magazine. D. In a science book",
-    "answer": "B",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "16. The writer’s grandma used the leftover potatoes to ________. A. mix with noodles B. boil some vegetables C. fry bacon D. throw away",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "17. Why did the potatoes cooked by the writer’s mum taste like bacon? A. Because she mixed the bacon with potatoes. B. Because she put potatoes into the containers. C. Because she was good at cooking. D. Because she poured the bacon oil into potatoes.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "18. According to the passage, how did the writer save food in her way? A. By shopping ahead of time. B. By throwing it into the litter bin. C. By following her mother's shopping list. D. By planning the next week’s food.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "19. What does the underlined word \"feast\" in the last paragraph probably mean? A. Sweat dream. B. Large meal. C. Happy story. D. Beautiful picture.",
-    "answer": "B",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -2501,7 +2501,7 @@
   },
   {
     "question": "21. What will plants do when they are attacked by insects? A. They will kill the insects by themselves. B. They will control the wasps to kill the insects. C. They will send out signals to ask for help. D. They will produce chemicals as a warning or a call for help.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -2526,47 +2526,47 @@
   },
   {
     "question": "11. How many hours can we save from Ganzhou to Shenzhen by G2197? A. 2. B. 4. C. 6. D. 8.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "12. What can we learn from paragraph 2? A. The tunnels cover 90 % of the railway. B. It was very difficult to build the railway. C. 157 bridges were built along the railway. D. The railway passes through northern Jiangxi.",
-    "answer": "B",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "13. What is the purpose of paragraph 3? A. To introduce places of interest. B. To share travelling experiences. C. To review the history of Ganzhou. D. To celebrate the success of Shenzhen.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "14. What do we know about Chen Yu? A. He is an orange farmer. B. He is a local in Shenzhen. C. His child lives in Ganzhou. D. His working place has changed.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "15. What kind of text is this? A. A short story. B. A travel diary. C. A train timetable. D. A news report.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "16. Who taught the writer to make bread? A. Her teacher. B. Her grandmother. C. Her parents. D. Her classmates.",
-    "answer": "B",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "17. How is the writer’s bread-making different from others’? A. She uses less water. B. She uses more sugar. C. She doesn’t bake it a long time. D. She doesn’t add quick-rise yeast.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "18. Which word best describes life in modern times according to the writer? A. Relaxing. B. Exciting. C. Fast. D. Happy.",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
     "question": "19. What does the underlined “it” in paragraph 4 refer to? A. The recipe. B. The plan. C. The change. D. The tradition.",
-    "answer": "D",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -2576,7 +2576,7 @@
   },
   {
     "question": "21. When is the best time to visit Cafio Cristales? A. In January. B. In March. C. In June. D. In October.",
-    "answer": "C",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -2646,7 +2646,7 @@
   },
   {
     "question": "1. Miss Gao isn’t here. She _______ to the station to meet Mr Brown. A. went B. has gone C. has been D. would go",
-    "answer": "B",
+    "answer": "A",
     "subject": "english"
   },
   {
@@ -4301,7 +4301,7 @@
   },
   {
     "question": "5. 复分解反应发生的条件： 生成物起码具备下列三个条件之一：① 有沉淀析出；② 有气体放出；③ 有水生成。 【解题方法指导】 [例1] 有一氧化碳、硝酸钡、二氧化硅、木炭、氢氧化钾、硫酸钠、盐酸、碳酸钾和氧化铁九种物质（其中酸、碱、盐都是溶液）。将它们分成三组，每组都有三种物质。其中： （1）第三组内只有单质和氧化物。且其中一种物质能与生石灰反应生成盐，另外二种物质都能与第一组内的A物质反应。 （2）第一组内A、B、D三种物质间均不能发生反应，而B物质能与第二组内的二种物质反应。 （3）第二组内不与第一组内B反应的物质，能与第一组内的A、D二种物质反应。 试写出各组物质中，每种物质的化学式： 第一组：A. _______ B. _________ D. _________； 第二组：_________，__________，___________； 第三组：_________，__________，___________。 解析： （1）写出九种物质的化学式：CO、Ba(NO3)2、SiO2、C、KOH、Na2SO4、HCl、K2CO3、Fe2O3 （2）结合题意分析推断： ① 第三组内只有单质和氧化物，即是C、CO、SiO2、Fe2O3中的三种。其中能与生石灰反应的是SiO2，是单质的只有C，所以C和SiO2一定在第三组中。 ② 由于C只能跟Fe2O3反应，所以第一组中的A一定是Fe2O3，第三组中的物质是C、SiO2和CO。 ③ 第一组内A、B、D之间不反应，说明HCl必在第二组内（因为Fe2O3能与HCl反应）。 即：第一组：A. Fe2O3， B. _________，C. ___________； 第二组：HCl，________，_________； 第三组：C，CO，SiO2 这样，没有确定的物质还有Ba(NO3)2，KOH，Na2SO4，K2CO3四种。B、D及第二组内的另二种物质各是上述四种物质中的一种。 ④ 由于B能与第二组内的二种物质反应，而在没确定的四种物质中，只有能跟HCl、KOH、Na2SO4、K2CO3中的Na2SO4、K2CO3反应，因此B是；Na2SO4、K2CO3应在第二组，KOH应是第一组中的D。 答案：第一组：Fe2O3 KOH 第二组：HCl K2CO3 Na2SO4 第三组：C CO SiO2 说明：本题是一道有关单质、氧化物及酸、碱、盐之间相互反应的综合题。解题的关键是审题。在充分理解题意的基础上，结合有关知识进行解答。 [例2] 某厂排出的废液中含Zn(NO3)2和AgNO3，为了从中回收金属银和硝酸锌，设计了以下实验步骤： （1）写出X、Y的化学式：X_______，Y________； （2）写出固体A的成分的化学式： ；写出滤液B中溶质的化学式：______；写出滤液C中溶质的化学式：_________。 解析：由滤液B蒸发、结晶得硝酸锌固体可知，B中所含溶质为；滤液C与反应生成及难溶物，可知C中所含溶质为ZnSO4；向含和AgNO3的废液中加入X后再加入Y可提纯出Ag，同时得到ZnSO4，可推知X为Zn，Y为稀硫酸。 答案：（1）Zn，H2SO4 （2）Zn和Ag，，ZnSO4 【考点突破】 【考点指要】 元素及其化合物知识是历年来中考化学中的重要内容，很多化学知识点及技能的考查都是以单质或化合物的内容为载体来体现的。一般考试题型包括选择、填空、简答、实验等，约占试卷分值的40％。酸碱盐等物质的性质及相互反应规律又是此部分内容的重点，复习中必须明确各物质的概念、分类，掌握典型代表物的性质并由此在同类物质间进行推广；对典型题的解法要分类总结，做到举一反三。 【典型例题分析】 [例1] 下列物质中，能与盐酸反应，其生成物之一又能与石灰石反应的是（ ） A. KOH B. AgNO3 C. CuSO4 D. Fe",
-    "answer": "B",
+    "answer": "C",
     "subject": "chemistry"
   },
   {
