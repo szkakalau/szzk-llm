@@ -14,6 +14,10 @@
 
 ## 快速开始
 
+### 🚀 在线 Demo
+
+**[https://u1046415-a5b8-78a828a3.westc.seetacloud.com:8443](https://u1046415-a5b8-78a828a3.westc.seetacloud.com:8443)**
+
 ### 7B 模型 (推荐)
 
 ```bash
