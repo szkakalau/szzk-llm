@@ -54,3 +54,6 @@ wandb/
 *_dryrun.json
 *_dry_run.json
 *_progress*
+.claude/
+.env.*
+.credentials.json
